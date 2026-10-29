@@ -52,3 +52,8 @@ Read the [summary](../benchmarks/results/summary.json),
 [tight-memory execution](../benchmarks/results/memory-budget-case.json) and
 [isolated encrypted dot proof](../benchmarks/results/isolated-dot-proof.json).
 The [reproduction guide](reproducibility.md) explains the frozen specification.
+
+The measured runtime is identified by source and binary hashes in calibration
+provenance. A later GCC portability fix adds braces around a trace-output
+separator guard; it changes no arithmetic, plan or security setting. Original
+measurements are retained rather than rerun to seek a better timing result.

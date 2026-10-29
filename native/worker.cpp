@@ -93,7 +93,9 @@ int main(int argc,char** argv) {
     std::string extra;require(!(s>>extra)); require(!live.count(id)); require(out && out->GetKeyTag()==pk->GetKeyTag());live.emplace(id,out);masked[id]=(op=="mask");
     size_t bytes=0;for(auto& [k,c]:live)bytes+=c->GetElements().size()*c->GetElements()[0].GetNumOfElements()*cc->GetRingDimension()*sizeof(uint64_t);
     peak=std::max(peak,live.size());peak_bytes=std::max(peak_bytes,bytes);
-    if(!first)trace<<",";first=false;trace<<"{\"op\":\""<<op<<"\",\"id\":"<<id<<",\"seconds\":"<<std::chrono::duration<double>(std::chrono::steady_clock::now()-op_start).count()<<",\"level\":"<<out->GetLevel()<<",\"scale\":"<<out->GetScalingFactor()<<",\"noise_scale_degree\":"<<out->GetNoiseScaleDeg()<<"}";
+    if(!first) { trace<<","; }
+    first=false;
+    trace<<"{\"op\":\""<<op<<"\",\"id\":"<<id<<",\"seconds\":"<<std::chrono::duration<double>(std::chrono::steady_clock::now()-op_start).count()<<",\"level\":"<<out->GetLevel()<<",\"scale\":"<<out->GetScalingFactor()<<",\"noise_scale_degree\":"<<out->GetNoiseScaleDeg()<<"}";
   }
   trace<<"]";double elapsed=std::chrono::duration<double>(std::chrono::steady_clock::now()-start).count();
   struct rusage usage; require(getrusage(RUSAGE_SELF,&usage)==0);
