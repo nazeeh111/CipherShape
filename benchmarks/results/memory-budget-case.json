@@ -1,0 +1,2490 @@
+{
+  "accepted": true,
+  "budget_bytes": 7873842,
+  "candidates": [
+    {
+      "basis": [
+        1,
+        2,
+        4
+      ],
+      "calibrated": true,
+      "feasible": false,
+      "layout": "packed",
+      "online_seconds": 1.9184498975056397,
+      "peak_live_bytes": 87924569,
+      "request_bytes": 2624614,
+      "requests": 10,
+      "response_bytes": 9186149,
+      "retention": "retain",
+      "setup_bytes": 23344408,
+      "sharing": "shared",
+      "total_seconds": 76.80913760615341
+    },
+    {
+      "basis": [
+        1,
+        2,
+        4
+      ],
+      "calibrated": true,
+      "feasible": false,
+      "layout": "packed",
+      "online_seconds": 1.9184498975056397,
+      "peak_live_bytes": 9186149,
+      "request_bytes": 2624614,
+      "requests": 10,
+      "response_bytes": 9186149,
+      "retention": "last-use",
+      "setup_bytes": 23344408,
+      "sharing": "shared",
+      "total_seconds": 76.80913760615341
+    },
+    {
+      "basis": [
+        1,
+        2,
+        4
+      ],
+      "calibrated": true,
+      "feasible": false,
+      "layout": "packed",
+      "online_seconds": 3.0026735135056395,
+      "peak_live_bytes": 132543007,
+      "request_bytes": 2624614,
+      "requests": 10,
+      "response_bytes": 9186149,
+      "retention": "retain",
+      "setup_bytes": 23344408,
+      "sharing": "per-output",
+      "total_seconds": 87.65137376615341
+    },
+    {
+      "basis": [
+        1,
+        2,
+        4
+      ],
+      "calibrated": true,
+      "feasible": true,
+      "layout": "packed",
+      "online_seconds": 3.0026735135056395,
+      "peak_live_bytes": 6561535,
+      "request_bytes": 2624614,
+      "requests": 10,
+      "response_bytes": 9186149,
+      "retention": "last-use",
+      "setup_bytes": 23344408,
+      "sharing": "per-output",
+      "total_seconds": 87.65137376615341
+    },
+    {
+      "basis": [
+        1
+      ],
+      "calibrated": true,
+      "feasible": false,
+      "layout": "packed",
+      "online_seconds": 2.9634266975056396,
+      "peak_live_bytes": 124669165,
+      "request_bytes": 2624614,
+      "requests": 10,
+      "response_bytes": 9186149,
+      "retention": "retain",
+      "setup_bytes": 12328518,
+      "sharing": "shared",
+      "total_seconds": 85.87058760514988
+    },
+    {
+      "basis": [
+        1
+      ],
+      "calibrated": true,
+      "feasible": false,
+      "layout": "packed",
+      "online_seconds": 2.9634266975056396,
+      "peak_live_bytes": 9186149,
+      "request_bytes": 2624614,
+      "requests": 10,
+      "response_bytes": 9186149,
+      "retention": "last-use",
+      "setup_bytes": 12328518,
+      "sharing": "shared",
+      "total_seconds": 85.87058760514988
+    },
+    {
+      "basis": [
+        1
+      ],
+      "calibrated": true,
+      "feasible": false,
+      "layout": "packed",
+      "online_seconds": 4.64477991350564,
+      "peak_live_bytes": 190284515,
+      "request_bytes": 2624614,
+      "requests": 10,
+      "response_bytes": 9186149,
+      "retention": "retain",
+      "setup_bytes": 12328518,
+      "sharing": "per-output",
+      "total_seconds": 102.6841197651499
+    },
+    {
+      "basis": [
+        1
+      ],
+      "calibrated": true,
+      "feasible": true,
+      "layout": "packed",
+      "online_seconds": 4.64477991350564,
+      "peak_live_bytes": 6561535,
+      "request_bytes": 2624614,
+      "requests": 10,
+      "response_bytes": 9186149,
+      "retention": "last-use",
+      "setup_bytes": 12328518,
+      "sharing": "per-output",
+      "total_seconds": 102.6841197651499
+    },
+    {
+      "basis": [
+        1,
+        4
+      ],
+      "calibrated": true,
+      "feasible": false,
+      "layout": "packed",
+      "online_seconds": 2.1796940975056396,
+      "peak_live_bytes": 97110718,
+      "request_bytes": 2624614,
+      "requests": 10,
+      "response_bytes": 9186149,
+      "retention": "retain",
+      "setup_bytes": 17836463,
+      "sharing": "shared",
+      "total_seconds": 78.72742060565164
+    },
+    {
+      "basis": [
+        1,
+        4
+      ],
+      "calibrated": true,
+      "feasible": false,
+      "layout": "packed",
+      "online_seconds": 2.1796940975056396,
+      "peak_live_bytes": 9186149,
+      "request_bytes": 2624614,
+      "requests": 10,
+      "response_bytes": 9186149,
+      "retention": "last-use",
+      "setup_bytes": 17836463,
+      "sharing": "shared",
+      "total_seconds": 78.72742060565164
+    },
+    {
+      "basis": [
+        1,
+        4
+      ],
+      "calibrated": true,
+      "feasible": false,
+      "layout": "packed",
+      "online_seconds": 3.4132001135056393,
+      "peak_live_bytes": 146978384,
+      "request_bytes": 2624614,
+      "requests": 10,
+      "response_bytes": 9186149,
+      "retention": "retain",
+      "setup_bytes": 17836463,
+      "sharing": "per-output",
+      "total_seconds": 91.06248076565164
+    },
+    {
+      "basis": [
+        1,
+        4
+      ],
+      "calibrated": true,
+      "feasible": true,
+      "layout": "packed",
+      "online_seconds": 3.4132001135056393,
+      "peak_live_bytes": 6561535,
+      "request_bytes": 2624614,
+      "requests": 10,
+      "response_bytes": 9186149,
+      "retention": "last-use",
+      "setup_bytes": 17836463,
+      "sharing": "per-output",
+      "total_seconds": 91.06248076565164
+    },
+    {
+      "basis": [],
+      "calibrated": true,
+      "feasible": false,
+      "layout": "scalar",
+      "online_seconds": 3.8488969615056394,
+      "peak_live_bytes": 161413761,
+      "request_bytes": 20996912,
+      "requests": 10,
+      "response_bytes": 9186149,
+      "retention": "retain",
+      "setup_bytes": 6820573,
+      "sharing": "shared",
+      "total_seconds": 156.7694915883362
+    },
+    {
+      "basis": [],
+      "calibrated": true,
+      "feasible": false,
+      "layout": "scalar",
+      "online_seconds": 3.8488969615056394,
+      "peak_live_bytes": 35432289,
+      "request_bytes": 20996912,
+      "requests": 10,
+      "response_bytes": 9186149,
+      "retention": "last-use",
+      "setup_bytes": 6820573,
+      "sharing": "shared",
+      "total_seconds": 156.7694915883362
+    },
+    {
+      "basis": [],
+      "calibrated": true,
+      "feasible": false,
+      "layout": "scalar",
+      "online_seconds": 8.807297885505639,
+      "peak_live_bytes": 266398321,
+      "request_bytes": 20996912,
+      "requests": 10,
+      "response_bytes": 9186149,
+      "retention": "retain",
+      "setup_bytes": 6820573,
+      "sharing": "per-output",
+      "total_seconds": 206.3535008283362
+    },
+    {
+      "basis": [],
+      "calibrated": true,
+      "feasible": false,
+      "layout": "scalar",
+      "online_seconds": 8.807297885505639,
+      "peak_live_bytes": 32807675,
+      "request_bytes": 20996912,
+      "requests": 10,
+      "response_bytes": 9186149,
+      "retention": "last-use",
+      "setup_bytes": 6820573,
+      "sharing": "per-output",
+      "total_seconds": 206.3535008283362
+    },
+    {
+      "basis": [],
+      "calibrated": true,
+      "feasible": false,
+      "layout": "scalar",
+      "online_seconds": 3.8488969615056394,
+      "peak_live_bytes": 161413761,
+      "request_bytes": 20996912,
+      "requests": 10,
+      "response_bytes": 9186149,
+      "retention": "retain",
+      "setup_bytes": 6820573,
+      "sharing": "shared",
+      "total_seconds": 156.7694915883362
+    },
+    {
+      "basis": [],
+      "calibrated": true,
+      "feasible": false,
+      "layout": "scalar",
+      "online_seconds": 3.8488969615056394,
+      "peak_live_bytes": 35432289,
+      "request_bytes": 20996912,
+      "requests": 10,
+      "response_bytes": 9186149,
+      "retention": "last-use",
+      "setup_bytes": 6820573,
+      "sharing": "shared",
+      "total_seconds": 156.7694915883362
+    },
+    {
+      "basis": [],
+      "calibrated": true,
+      "feasible": false,
+      "layout": "scalar",
+      "online_seconds": 8.807297885505639,
+      "peak_live_bytes": 266398321,
+      "request_bytes": 20996912,
+      "requests": 10,
+      "response_bytes": 9186149,
+      "retention": "retain",
+      "setup_bytes": 6820573,
+      "sharing": "per-output",
+      "total_seconds": 206.3535008283362
+    },
+    {
+      "basis": [],
+      "calibrated": true,
+      "feasible": false,
+      "layout": "scalar",
+      "online_seconds": 8.807297885505639,
+      "peak_live_bytes": 32807675,
+      "request_bytes": 20996912,
+      "requests": 10,
+      "response_bytes": 9186149,
+      "retention": "last-use",
+      "setup_bytes": 6820573,
+      "sharing": "per-output",
+      "total_seconds": 206.3535008283362
+    },
+    {
+      "basis": [],
+      "calibrated": true,
+      "feasible": false,
+      "layout": "scalar",
+      "online_seconds": 3.8488969615056394,
+      "peak_live_bytes": 161413761,
+      "request_bytes": 20996912,
+      "requests": 10,
+      "response_bytes": 9186149,
+      "retention": "retain",
+      "setup_bytes": 6820573,
+      "sharing": "shared",
+      "total_seconds": 156.7694915883362
+    },
+    {
+      "basis": [],
+      "calibrated": true,
+      "feasible": false,
+      "layout": "scalar",
+      "online_seconds": 3.8488969615056394,
+      "peak_live_bytes": 35432289,
+      "request_bytes": 20996912,
+      "requests": 10,
+      "response_bytes": 9186149,
+      "retention": "last-use",
+      "setup_bytes": 6820573,
+      "sharing": "shared",
+      "total_seconds": 156.7694915883362
+    },
+    {
+      "basis": [],
+      "calibrated": true,
+      "feasible": false,
+      "layout": "scalar",
+      "online_seconds": 8.807297885505639,
+      "peak_live_bytes": 266398321,
+      "request_bytes": 20996912,
+      "requests": 10,
+      "response_bytes": 9186149,
+      "retention": "retain",
+      "setup_bytes": 6820573,
+      "sharing": "per-output",
+      "total_seconds": 206.3535008283362
+    },
+    {
+      "basis": [],
+      "calibrated": true,
+      "feasible": false,
+      "layout": "scalar",
+      "online_seconds": 8.807297885505639,
+      "peak_live_bytes": 32807675,
+      "request_bytes": 20996912,
+      "requests": 10,
+      "response_bytes": 9186149,
+      "retention": "last-use",
+      "setup_bytes": 6820573,
+      "sharing": "per-output",
+      "total_seconds": 206.3535008283362
+    }
+  ],
+  "execution": {
+    "accepted": true,
+    "compilation_seconds": 0.0,
+    "graph_sha256": "83aa9ba9615c7ea8c0c008fcf4e02f320def327c4b40ce5c0cd90ddfedc72afb",
+    "key_artifact_bytes": {
+      "context.bin": 733,
+      "mult.bin": 5507937,
+      "public.bin": 1311903,
+      "rot.bin": 16521157
+    },
+    "parameters": {
+      "depth": 4,
+      "first_mod_bits": 55,
+      "key_tag": "1bd97ae7765811ca5b754264e207385b",
+      "peak_rss_bytes": 38993920,
+      "ring_dimension": 16384,
+      "scale_bits": 45,
+      "security": "HEStd_128_classic",
+      "slots": 8192
+    },
+    "plan": {
+      "basis": [
+        1,
+        2,
+        4
+      ],
+      "inputs": [
+        [
+          "x",
+          null
+        ],
+        [
+          "y",
+          null
+        ]
+      ],
+      "instructions": [
+        "input 0 0",
+        "rotate 1 0 1",
+        "add 2 0 1",
+        "drop 0",
+        "drop 1",
+        "rotate 3 2 2",
+        "add 4 2 3",
+        "drop 2",
+        "drop 3",
+        "rotate 5 4 4",
+        "add 6 4 5",
+        "drop 4",
+        "drop 5",
+        "scale 7 6 0.125",
+        "drop 6",
+        "mask 8 7",
+        "drop 7",
+        "output 8 0",
+        "drop 8",
+        "input 9 1",
+        "rotate 10 9 1",
+        "add 11 9 10",
+        "drop 9",
+        "drop 10",
+        "rotate 12 11 2",
+        "add 13 11 12",
+        "drop 11",
+        "drop 12",
+        "rotate 14 13 4",
+        "add 15 13 14",
+        "drop 13",
+        "drop 14",
+        "scale 16 15 0.125",
+        "drop 15",
+        "mask 17 16",
+        "drop 16",
+        "output 17 1",
+        "drop 17",
+        "input 18 0",
+        "mul 19 18 18",
+        "rotate 20 19 1",
+        "add 21 19 20",
+        "drop 19",
+        "drop 20",
+        "rotate 22 21 2",
+        "add 23 21 22",
+        "drop 21",
+        "drop 22",
+        "rotate 24 23 4",
+        "add 25 23 24",
+        "drop 23",
+        "drop 24",
+        "scale 26 25 0.125",
+        "drop 25",
+        "rotate 27 18 1",
+        "add 28 18 27",
+        "drop 18",
+        "drop 27",
+        "rotate 29 28 2",
+        "add 30 28 29",
+        "drop 28",
+        "drop 29",
+        "rotate 31 30 4",
+        "add 32 30 31",
+        "drop 30",
+        "drop 31",
+        "scale 33 32 0.125",
+        "drop 32",
+        "mul 34 33 33",
+        "drop 33",
+        "sub 35 26 34",
+        "drop 26",
+        "drop 34",
+        "mask 36 35",
+        "drop 35",
+        "output 36 2",
+        "drop 36",
+        "input 37 1",
+        "mul 38 37 37",
+        "rotate 39 38 1",
+        "add 40 38 39",
+        "drop 38",
+        "drop 39",
+        "rotate 41 40 2",
+        "add 42 40 41",
+        "drop 40",
+        "drop 41",
+        "rotate 43 42 4",
+        "add 44 42 43",
+        "drop 42",
+        "drop 43",
+        "scale 45 44 0.125",
+        "drop 44",
+        "rotate 46 37 1",
+        "add 47 37 46",
+        "drop 37",
+        "drop 46",
+        "rotate 48 47 2",
+        "add 49 47 48",
+        "drop 47",
+        "drop 48",
+        "rotate 50 49 4",
+        "add 51 49 50",
+        "drop 49",
+        "drop 50",
+        "scale 52 51 0.125",
+        "drop 51",
+        "mul 53 52 52",
+        "drop 52",
+        "sub 54 45 53",
+        "drop 45",
+        "drop 53",
+        "mask 55 54",
+        "drop 54",
+        "output 55 3",
+        "drop 55",
+        "input 56 0",
+        "input 57 1",
+        "mul 58 56 57",
+        "rotate 59 58 1",
+        "add 60 58 59",
+        "drop 58",
+        "drop 59",
+        "rotate 61 60 2",
+        "add 62 60 61",
+        "drop 60",
+        "drop 61",
+        "rotate 63 62 4",
+        "add 64 62 63",
+        "drop 62",
+        "drop 63",
+        "scale 65 64 0.125",
+        "drop 64",
+        "rotate 66 56 1",
+        "add 67 56 66",
+        "drop 56",
+        "drop 66",
+        "rotate 68 67 2",
+        "add 69 67 68",
+        "drop 67",
+        "drop 68",
+        "rotate 70 69 4",
+        "add 71 69 70",
+        "drop 69",
+        "drop 70",
+        "scale 72 71 0.125",
+        "drop 71",
+        "rotate 73 57 1",
+        "add 74 57 73",
+        "drop 57",
+        "drop 73",
+        "rotate 75 74 2",
+        "add 76 74 75",
+        "drop 74",
+        "drop 75",
+        "rotate 77 76 4",
+        "add 78 76 77",
+        "drop 76",
+        "drop 77",
+        "scale 79 78 0.125",
+        "drop 78",
+        "mul 80 72 79",
+        "drop 72",
+        "drop 79",
+        "sub 81 65 80",
+        "drop 65",
+        "drop 80",
+        "mask 82 81",
+        "drop 81",
+        "output 82 4",
+        "drop 82",
+        "input 83 0",
+        "weights 84 83 8 0.015625 0.03125 0.046875 0.0625 0.078125 0.09375 0.109375 0.125",
+        "drop 83",
+        "rotate 85 84 1",
+        "add 86 84 85",
+        "drop 84",
+        "drop 85",
+        "rotate 87 86 2",
+        "add 88 86 87",
+        "drop 86",
+        "drop 87",
+        "rotate 89 88 4",
+        "add 90 88 89",
+        "drop 88",
+        "drop 89",
+        "mask 91 90",
+        "drop 90",
+        "output 91 5",
+        "drop 91",
+        "input 92 1",
+        "weights 93 92 8 0.015625 0.03125 0.046875 0.0625 0.078125 0.09375 0.109375 0.125",
+        "drop 92",
+        "rotate 94 93 1",
+        "add 95 93 94",
+        "drop 93",
+        "drop 94",
+        "rotate 96 95 2",
+        "add 97 95 96",
+        "drop 95",
+        "drop 96",
+        "rotate 98 97 4",
+        "add 99 97 98",
+        "drop 97",
+        "drop 98",
+        "mask 100 99",
+        "drop 99",
+        "output 100 6",
+        "drop 100"
+      ],
+      "layout": "packed",
+      "outputs": [
+        "mean_x",
+        "mean_y",
+        "variance_x",
+        "variance_y",
+        "covariance",
+        "score_x",
+        "score_y"
+      ],
+      "retention": "last-use",
+      "sharing": "per-output",
+      "stats": {
+        "ciphertext_inputs": 2,
+        "counts": {
+          "add": 33,
+          "input": 8,
+          "mask": 7,
+          "mul": 6,
+          "output": 7,
+          "rotate": 33,
+          "scale": 9,
+          "sub": 3,
+          "weights": 2
+        },
+        "depth": 4,
+        "layout_conversions": 0,
+        "output_masks": 7,
+        "peak_live_ciphertexts": 5,
+        "relinearizations": 6,
+        "rescale_policy": "OpenFHE FLEXIBLEAUTO; actual levels in native trace",
+        "rotation_keys": 3,
+        "scale_bits": 45,
+        "security": "HEStd_128_classic",
+        "slots": "ring_dimension/2"
+      },
+      "version": 1,
+      "workload": "analytics"
+    },
+    "private_key_bytes_client_only": 656350,
+    "program_id": "ba95ff1b774ff4cd8e2a27ae05e9e8c8beea1441162eaadbde6ddc4687aeac33",
+    "public_synthetic_data_only": true,
+    "runs": [
+      {
+        "accepted": true,
+        "approximated_plaintext": {
+          "covariance": -0.05875000000000001,
+          "mean_x": -0.17500000000000002,
+          "mean_y": -0.1,
+          "score_x": -0.060937500000000006,
+          "score_y": -0.07187500000000001,
+          "variance_x": 0.249375,
+          "variance_y": 0.17500000000000002
+        },
+        "approximation_error": 2.7755575615628914e-17,
+        "changed_input": false,
+        "decrypted": {
+          "covariance": -0.05874999722925442,
+          "mean_x": -0.1749999906389879,
+          "mean_y": -0.09999999044479856,
+          "score_x": -0.060937500195118136,
+          "score_y": -0.07187500016494766,
+          "variance_x": 0.24937500343156446,
+          "variance_y": 0.17500000230573398
+        },
+        "decryption_peak_rss_bytes": 17301504,
+        "decryption_seconds": 2.287109250028152,
+        "decryption_wall_seconds": 2.3027449999935925,
+        "encryption_error": 9.555201449518158e-09,
+        "encryption_peak_rss_bytes": 18726912,
+        "encryption_seconds": 0.7239466669852845,
+        "encryption_wall_seconds": 0.732208040979458,
+        "end_to_end_seconds": 6.258112332987366,
+        "evaluation_seconds": 2.23948,
+        "http_request_body_bytes": 3499992,
+        "http_response_body_bytes": 8763715,
+        "http_roundtrip_seconds": 3.1994381659897044,
+        "max_nonresult_slot": 2.5889993941694887e-10,
+        "original_float": {
+          "covariance": -0.05875000000000002,
+          "mean_x": -0.17500000000000002,
+          "mean_y": -0.1,
+          "score_x": -0.060937500000000006,
+          "score_y": -0.07187500000000001,
+          "variance_x": 0.24937499999999999,
+          "variance_y": 0.17500000000000002
+        },
+        "peak_coefficient_bytes": 6553600,
+        "peak_live_ciphertexts": 5,
+        "peak_rss_bytes": 51314688,
+        "plaintext_graph_seconds": 0.0007119160145521164,
+        "plaintext_original_seconds": 7.9624995123595e-05,
+        "public_synthetic_fixture": {
+          "x": [
+            -0.8,
+            -0.5,
+            -0.2,
+            0.1,
+            0.4,
+            0.7,
+            -0.7,
+            -0.4
+          ],
+          "y": [
+            -0.3,
+            0.0,
+            0.3,
+            0.6,
+            -0.8,
+            -0.5,
+            -0.2,
+            0.1
+          ]
+        },
+        "request_bytes": 2625093,
+        "request_id": "6d908cb2-1f9d-4a68-b0a4-48208fedc9ee",
+        "request_index": 0,
+        "response_bytes": 6565381,
+        "server_and_transfer_wall_seconds": 3.223156124993693,
+        "server_process_seconds": 2.9892960409924854,
+        "tolerance": 0.0001,
+        "trace": [
+          {
+            "id": 0,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "input",
+            "scale": 35184400000000.0,
+            "seconds": 0.0929481
+          },
+          {
+            "id": 1,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.0582499
+          },
+          {
+            "id": 2,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000684125
+          },
+          {
+            "id": 3,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.047708
+          },
+          {
+            "id": 4,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000643958
+          },
+          {
+            "id": 5,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.0441853
+          },
+          {
+            "id": 6,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000969625
+          },
+          {
+            "id": 7,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "scale",
+            "scale": 1.23794e+27,
+            "seconds": 0.00326192
+          },
+          {
+            "id": 8,
+            "level": 1,
+            "noise_scale_degree": 2,
+            "op": "mask",
+            "scale": 1.23794e+27,
+            "seconds": 0.0208788
+          },
+          {
+            "id": 9,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "input",
+            "scale": 35184400000000.0,
+            "seconds": 0.143503
+          },
+          {
+            "id": 10,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.0702031
+          },
+          {
+            "id": 11,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000254333
+          },
+          {
+            "id": 12,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.044875
+          },
+          {
+            "id": 13,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.00033175
+          },
+          {
+            "id": 14,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.117999
+          },
+          {
+            "id": 15,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000746
+          },
+          {
+            "id": 16,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "scale",
+            "scale": 1.23794e+27,
+            "seconds": 0.0027515
+          },
+          {
+            "id": 17,
+            "level": 1,
+            "noise_scale_degree": 2,
+            "op": "mask",
+            "scale": 1.23794e+27,
+            "seconds": 0.0189137
+          },
+          {
+            "id": 18,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "input",
+            "scale": 35184400000000.0,
+            "seconds": 0.124584
+          },
+          {
+            "id": 19,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "mul",
+            "scale": 1.23794e+27,
+            "seconds": 0.0444072
+          },
+          {
+            "id": 20,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "rotate",
+            "scale": 1.23794e+27,
+            "seconds": 0.040444
+          },
+          {
+            "id": 21,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "add",
+            "scale": 1.23794e+27,
+            "seconds": 0.000637667
+          },
+          {
+            "id": 22,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "rotate",
+            "scale": 1.23794e+27,
+            "seconds": 0.0297914
+          },
+          {
+            "id": 23,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "add",
+            "scale": 1.23794e+27,
+            "seconds": 0.00047675
+          },
+          {
+            "id": 24,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "rotate",
+            "scale": 1.23794e+27,
+            "seconds": 0.0409406
+          },
+          {
+            "id": 25,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "add",
+            "scale": 1.23794e+27,
+            "seconds": 0.000332417
+          },
+          {
+            "id": 26,
+            "level": 1,
+            "noise_scale_degree": 2,
+            "op": "scale",
+            "scale": 1.23794e+27,
+            "seconds": 0.00558904
+          },
+          {
+            "id": 27,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.0576369
+          },
+          {
+            "id": 28,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000635792
+          },
+          {
+            "id": 29,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.0307162
+          },
+          {
+            "id": 30,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000334667
+          },
+          {
+            "id": 31,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.0525809
+          },
+          {
+            "id": 32,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.00045125
+          },
+          {
+            "id": 33,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "scale",
+            "scale": 1.23794e+27,
+            "seconds": 0.00176892
+          },
+          {
+            "id": 34,
+            "level": 1,
+            "noise_scale_degree": 2,
+            "op": "mul",
+            "scale": 1.23794e+27,
+            "seconds": 0.030666
+          },
+          {
+            "id": 35,
+            "level": 1,
+            "noise_scale_degree": 2,
+            "op": "sub",
+            "scale": 1.23794e+27,
+            "seconds": 0.000538083
+          },
+          {
+            "id": 36,
+            "level": 2,
+            "noise_scale_degree": 2,
+            "op": "mask",
+            "scale": 1.23794e+27,
+            "seconds": 0.00951321
+          },
+          {
+            "id": 37,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "input",
+            "scale": 35184400000000.0,
+            "seconds": 0.0554108
+          },
+          {
+            "id": 38,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "mul",
+            "scale": 1.23794e+27,
+            "seconds": 0.0275428
+          },
+          {
+            "id": 39,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "rotate",
+            "scale": 1.23794e+27,
+            "seconds": 0.0333942
+          },
+          {
+            "id": 40,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "add",
+            "scale": 1.23794e+27,
+            "seconds": 0.000754667
+          },
+          {
+            "id": 41,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "rotate",
+            "scale": 1.23794e+27,
+            "seconds": 0.0287105
+          },
+          {
+            "id": 42,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "add",
+            "scale": 1.23794e+27,
+            "seconds": 0.0004495
+          },
+          {
+            "id": 43,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "rotate",
+            "scale": 1.23794e+27,
+            "seconds": 0.0314175
+          },
+          {
+            "id": 44,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "add",
+            "scale": 1.23794e+27,
+            "seconds": 0.000494917
+          },
+          {
+            "id": 45,
+            "level": 1,
+            "noise_scale_degree": 2,
+            "op": "scale",
+            "scale": 1.23794e+27,
+            "seconds": 0.00606708
+          },
+          {
+            "id": 46,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.0287148
+          },
+          {
+            "id": 47,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000471959
+          },
+          {
+            "id": 48,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.0230692
+          },
+          {
+            "id": 49,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000368792
+          },
+          {
+            "id": 50,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.0252951
+          },
+          {
+            "id": 51,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000570167
+          },
+          {
+            "id": 52,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "scale",
+            "scale": 1.23794e+27,
+            "seconds": 0.00129638
+          },
+          {
+            "id": 53,
+            "level": 1,
+            "noise_scale_degree": 2,
+            "op": "mul",
+            "scale": 1.23794e+27,
+            "seconds": 0.0275453
+          },
+          {
+            "id": 54,
+            "level": 1,
+            "noise_scale_degree": 2,
+            "op": "sub",
+            "scale": 1.23794e+27,
+            "seconds": 0.000753708
+          },
+          {
+            "id": 55,
+            "level": 2,
+            "noise_scale_degree": 2,
+            "op": "mask",
+            "scale": 1.23794e+27,
+            "seconds": 0.00832162
+          },
+          {
+            "id": 56,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "input",
+            "scale": 35184400000000.0,
+            "seconds": 0.053462
+          },
+          {
+            "id": 57,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "input",
+            "scale": 35184400000000.0,
+            "seconds": 0.0459707
+          },
+          {
+            "id": 58,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "mul",
+            "scale": 1.23794e+27,
+            "seconds": 0.0294261
+          },
+          {
+            "id": 59,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "rotate",
+            "scale": 1.23794e+27,
+            "seconds": 0.0289467
+          },
+          {
+            "id": 60,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "add",
+            "scale": 1.23794e+27,
+            "seconds": 0.000189417
+          },
+          {
+            "id": 61,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "rotate",
+            "scale": 1.23794e+27,
+            "seconds": 0.0233679
+          },
+          {
+            "id": 62,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "add",
+            "scale": 1.23794e+27,
+            "seconds": 0.000275042
+          },
+          {
+            "id": 63,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "rotate",
+            "scale": 1.23794e+27,
+            "seconds": 0.0237483
+          },
+          {
+            "id": 64,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "add",
+            "scale": 1.23794e+27,
+            "seconds": 0.000533333
+          },
+          {
+            "id": 65,
+            "level": 1,
+            "noise_scale_degree": 2,
+            "op": "scale",
+            "scale": 1.23794e+27,
+            "seconds": 0.00457442
+          },
+          {
+            "id": 66,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.021688
+          },
+          {
+            "id": 67,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000285917
+          },
+          {
+            "id": 68,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.0217597
+          },
+          {
+            "id": 69,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000409416
+          },
+          {
+            "id": 70,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.0215055
+          },
+          {
+            "id": 71,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000305417
+          },
+          {
+            "id": 72,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "scale",
+            "scale": 1.23794e+27,
+            "seconds": 0.00135704
+          },
+          {
+            "id": 73,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.0244578
+          },
+          {
+            "id": 74,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000493042
+          },
+          {
+            "id": 75,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.0323154
+          },
+          {
+            "id": 76,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000239791
+          },
+          {
+            "id": 77,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.0224611
+          },
+          {
+            "id": 78,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000408375
+          },
+          {
+            "id": 79,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "scale",
+            "scale": 1.23794e+27,
+            "seconds": 0.00148296
+          },
+          {
+            "id": 80,
+            "level": 1,
+            "noise_scale_degree": 2,
+            "op": "mul",
+            "scale": 1.23794e+27,
+            "seconds": 0.0240052
+          },
+          {
+            "id": 81,
+            "level": 1,
+            "noise_scale_degree": 2,
+            "op": "sub",
+            "scale": 1.23794e+27,
+            "seconds": 0.000355125
+          },
+          {
+            "id": 82,
+            "level": 2,
+            "noise_scale_degree": 2,
+            "op": "mask",
+            "scale": 1.23794e+27,
+            "seconds": 0.0100951
+          },
+          {
+            "id": 83,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "input",
+            "scale": 35184400000000.0,
+            "seconds": 0.0527055
+          },
+          {
+            "id": 84,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "weights",
+            "scale": 1.23794e+27,
+            "seconds": 0.00304942
+          },
+          {
+            "id": 85,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "rotate",
+            "scale": 1.23794e+27,
+            "seconds": 0.03374
+          },
+          {
+            "id": 86,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "add",
+            "scale": 1.23794e+27,
+            "seconds": 0.000277333
+          },
+          {
+            "id": 87,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "rotate",
+            "scale": 1.23794e+27,
+            "seconds": 0.0223802
+          },
+          {
+            "id": 88,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "add",
+            "scale": 1.23794e+27,
+            "seconds": 0.000245375
+          },
+          {
+            "id": 89,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "rotate",
+            "scale": 1.23794e+27,
+            "seconds": 0.0267502
+          },
+          {
+            "id": 90,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "add",
+            "scale": 1.23794e+27,
+            "seconds": 0.000226459
+          },
+          {
+            "id": 91,
+            "level": 1,
+            "noise_scale_degree": 2,
+            "op": "mask",
+            "scale": 1.23794e+27,
+            "seconds": 0.0123662
+          },
+          {
+            "id": 92,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "input",
+            "scale": 35184400000000.0,
+            "seconds": 0.046951
+          },
+          {
+            "id": 93,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "weights",
+            "scale": 1.23794e+27,
+            "seconds": 0.00257279
+          },
+          {
+            "id": 94,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "rotate",
+            "scale": 1.23794e+27,
+            "seconds": 0.019992
+          },
+          {
+            "id": 95,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "add",
+            "scale": 1.23794e+27,
+            "seconds": 0.000412334
+          },
+          {
+            "id": 96,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "rotate",
+            "scale": 1.23794e+27,
+            "seconds": 0.0232966
+          },
+          {
+            "id": 97,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "add",
+            "scale": 1.23794e+27,
+            "seconds": 0.000693958
+          },
+          {
+            "id": 98,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "rotate",
+            "scale": 1.23794e+27,
+            "seconds": 0.0202476
+          },
+          {
+            "id": 99,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "add",
+            "scale": 1.23794e+27,
+            "seconds": 0.000420292
+          },
+          {
+            "id": 100,
+            "level": 1,
+            "noise_scale_degree": 2,
+            "op": "mask",
+            "scale": 1.23794e+27,
+            "seconds": 0.00879821
+          }
+        ]
+      },
+      {
+        "accepted": true,
+        "approximated_plaintext": {
+          "covariance": -1.0,
+          "mean_x": 0.0,
+          "mean_y": 0.0,
+          "score_x": -0.0625,
+          "score_y": 0.0625,
+          "variance_x": 1.0,
+          "variance_y": 1.0
+        },
+        "approximation_error": 0.0,
+        "changed_input": true,
+        "decrypted": {
+          "covariance": -0.9999999996551014,
+          "mean_x": 9.872967896688149e-09,
+          "mean_y": 9.685515476228372e-09,
+          "score_x": -0.062499999572284096,
+          "score_y": 0.0625000001233805,
+          "variance_x": 0.9999999995566977,
+          "variance_y": 1.0000000000069755
+        },
+        "decryption_peak_rss_bytes": 17399808,
+        "decryption_seconds": 2.9738531259645242,
+        "decryption_wall_seconds": 2.991458375006914,
+        "encryption_error": 9.872967896688149e-09,
+        "encryption_peak_rss_bytes": 18694144,
+        "encryption_seconds": 1.1274271669972222,
+        "encryption_wall_seconds": 1.137092416989617,
+        "end_to_end_seconds": 6.869849875016371,
+        "evaluation_seconds": 2.02488,
+        "http_request_body_bytes": 3499992,
+        "http_response_body_bytes": 8763706,
+        "http_roundtrip_seconds": 2.710886584012769,
+        "max_nonresult_slot": 2.438763598258549e-10,
+        "original_float": {
+          "covariance": -1.0,
+          "mean_x": 0.0,
+          "mean_y": 0.0,
+          "score_x": -0.0625,
+          "score_y": 0.0625,
+          "variance_x": 1.0,
+          "variance_y": 1.0
+        },
+        "peak_coefficient_bytes": 6553600,
+        "peak_live_ciphertexts": 5,
+        "peak_rss_bytes": 58834944,
+        "plaintext_graph_seconds": 0.0007208340102806687,
+        "plaintext_original_seconds": 0.0014748329995200038,
+        "public_synthetic_fixture": {
+          "x": [
+            1.0,
+            -1.0,
+            1.0,
+            -1.0,
+            1.0,
+            -1.0,
+            1.0,
+            -1.0
+          ],
+          "y": [
+            -1.0,
+            1.0,
+            -1.0,
+            1.0,
+            -1.0,
+            1.0,
+            -1.0,
+            1.0
+          ]
+        },
+        "request_bytes": 2625093,
+        "request_id": "70919e48-0392-4846-997d-8d58d3ead47c",
+        "request_index": 1,
+        "response_bytes": 6565381,
+        "server_and_transfer_wall_seconds": 2.741295582993189,
+        "server_process_seconds": 2.5136634999944363,
+        "tolerance": 0.0001,
+        "trace": [
+          {
+            "id": 0,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "input",
+            "scale": 35184400000000.0,
+            "seconds": 0.0515038
+          },
+          {
+            "id": 1,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.0289065
+          },
+          {
+            "id": 2,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000528208
+          },
+          {
+            "id": 3,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.0272813
+          },
+          {
+            "id": 4,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000398
+          },
+          {
+            "id": 5,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.0374487
+          },
+          {
+            "id": 6,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000364084
+          },
+          {
+            "id": 7,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "scale",
+            "scale": 1.23794e+27,
+            "seconds": 0.00183858
+          },
+          {
+            "id": 8,
+            "level": 1,
+            "noise_scale_degree": 2,
+            "op": "mask",
+            "scale": 1.23794e+27,
+            "seconds": 0.00755742
+          },
+          {
+            "id": 9,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "input",
+            "scale": 35184400000000.0,
+            "seconds": 0.0544482
+          },
+          {
+            "id": 10,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.0285601
+          },
+          {
+            "id": 11,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000518458
+          },
+          {
+            "id": 12,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.0286769
+          },
+          {
+            "id": 13,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000330875
+          },
+          {
+            "id": 14,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.0268343
+          },
+          {
+            "id": 15,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.00127983
+          },
+          {
+            "id": 16,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "scale",
+            "scale": 1.23794e+27,
+            "seconds": 0.00185971
+          },
+          {
+            "id": 17,
+            "level": 1,
+            "noise_scale_degree": 2,
+            "op": "mask",
+            "scale": 1.23794e+27,
+            "seconds": 0.00772896
+          },
+          {
+            "id": 18,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "input",
+            "scale": 35184400000000.0,
+            "seconds": 0.0553013
+          },
+          {
+            "id": 19,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "mul",
+            "scale": 1.23794e+27,
+            "seconds": 0.0266142
+          },
+          {
+            "id": 20,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "rotate",
+            "scale": 1.23794e+27,
+            "seconds": 0.0169461
+          },
+          {
+            "id": 21,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "add",
+            "scale": 1.23794e+27,
+            "seconds": 0.000298916
+          },
+          {
+            "id": 22,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "rotate",
+            "scale": 1.23794e+27,
+            "seconds": 0.0335652
+          },
+          {
+            "id": 23,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "add",
+            "scale": 1.23794e+27,
+            "seconds": 0.000835334
+          },
+          {
+            "id": 24,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "rotate",
+            "scale": 1.23794e+27,
+            "seconds": 0.0290721
+          },
+          {
+            "id": 25,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "add",
+            "scale": 1.23794e+27,
+            "seconds": 0.000395958
+          },
+          {
+            "id": 26,
+            "level": 1,
+            "noise_scale_degree": 2,
+            "op": "scale",
+            "scale": 1.23794e+27,
+            "seconds": 0.00408438
+          },
+          {
+            "id": 27,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.0258078
+          },
+          {
+            "id": 28,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000372
+          },
+          {
+            "id": 29,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.0225668
+          },
+          {
+            "id": 30,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.00036575
+          },
+          {
+            "id": 31,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.0165213
+          },
+          {
+            "id": 32,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000377583
+          },
+          {
+            "id": 33,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "scale",
+            "scale": 1.23794e+27,
+            "seconds": 0.00129562
+          },
+          {
+            "id": 34,
+            "level": 1,
+            "noise_scale_degree": 2,
+            "op": "mul",
+            "scale": 1.23794e+27,
+            "seconds": 0.0214377
+          },
+          {
+            "id": 35,
+            "level": 1,
+            "noise_scale_degree": 2,
+            "op": "sub",
+            "scale": 1.23794e+27,
+            "seconds": 0.000230209
+          },
+          {
+            "id": 36,
+            "level": 2,
+            "noise_scale_degree": 2,
+            "op": "mask",
+            "scale": 1.23794e+27,
+            "seconds": 0.00666842
+          },
+          {
+            "id": 37,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "input",
+            "scale": 35184400000000.0,
+            "seconds": 0.0399595
+          },
+          {
+            "id": 38,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "mul",
+            "scale": 1.23794e+27,
+            "seconds": 0.0168931
+          },
+          {
+            "id": 39,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "rotate",
+            "scale": 1.23794e+27,
+            "seconds": 0.018358
+          },
+          {
+            "id": 40,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "add",
+            "scale": 1.23794e+27,
+            "seconds": 0.000365583
+          },
+          {
+            "id": 41,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "rotate",
+            "scale": 1.23794e+27,
+            "seconds": 0.0217281
+          },
+          {
+            "id": 42,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "add",
+            "scale": 1.23794e+27,
+            "seconds": 0.000492041
+          },
+          {
+            "id": 43,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "rotate",
+            "scale": 1.23794e+27,
+            "seconds": 0.02785
+          },
+          {
+            "id": 44,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "add",
+            "scale": 1.23794e+27,
+            "seconds": 0.0005245
+          },
+          {
+            "id": 45,
+            "level": 1,
+            "noise_scale_degree": 2,
+            "op": "scale",
+            "scale": 1.23794e+27,
+            "seconds": 0.00491912
+          },
+          {
+            "id": 46,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.0360783
+          },
+          {
+            "id": 47,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000329625
+          },
+          {
+            "id": 48,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.0272245
+          },
+          {
+            "id": 49,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000178
+          },
+          {
+            "id": 50,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.0346282
+          },
+          {
+            "id": 51,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000212083
+          },
+          {
+            "id": 52,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "scale",
+            "scale": 1.23794e+27,
+            "seconds": 0.00124779
+          },
+          {
+            "id": 53,
+            "level": 1,
+            "noise_scale_degree": 2,
+            "op": "mul",
+            "scale": 1.23794e+27,
+            "seconds": 0.0412975
+          },
+          {
+            "id": 54,
+            "level": 1,
+            "noise_scale_degree": 2,
+            "op": "sub",
+            "scale": 1.23794e+27,
+            "seconds": 0.00140288
+          },
+          {
+            "id": 55,
+            "level": 2,
+            "noise_scale_degree": 2,
+            "op": "mask",
+            "scale": 1.23794e+27,
+            "seconds": 0.0128463
+          },
+          {
+            "id": 56,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "input",
+            "scale": 35184400000000.0,
+            "seconds": 0.137983
+          },
+          {
+            "id": 57,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "input",
+            "scale": 35184400000000.0,
+            "seconds": 0.0675785
+          },
+          {
+            "id": 58,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "mul",
+            "scale": 1.23794e+27,
+            "seconds": 0.0300477
+          },
+          {
+            "id": 59,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "rotate",
+            "scale": 1.23794e+27,
+            "seconds": 0.0238354
+          },
+          {
+            "id": 60,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "add",
+            "scale": 1.23794e+27,
+            "seconds": 0.00149442
+          },
+          {
+            "id": 61,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "rotate",
+            "scale": 1.23794e+27,
+            "seconds": 0.0282416
+          },
+          {
+            "id": 62,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "add",
+            "scale": 1.23794e+27,
+            "seconds": 0.000536625
+          },
+          {
+            "id": 63,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "rotate",
+            "scale": 1.23794e+27,
+            "seconds": 0.0377199
+          },
+          {
+            "id": 64,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "add",
+            "scale": 1.23794e+27,
+            "seconds": 0.000234834
+          },
+          {
+            "id": 65,
+            "level": 1,
+            "noise_scale_degree": 2,
+            "op": "scale",
+            "scale": 1.23794e+27,
+            "seconds": 0.00404846
+          },
+          {
+            "id": 66,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.02736
+          },
+          {
+            "id": 67,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000903208
+          },
+          {
+            "id": 68,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.0267198
+          },
+          {
+            "id": 69,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000249791
+          },
+          {
+            "id": 70,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.0339315
+          },
+          {
+            "id": 71,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000428666
+          },
+          {
+            "id": 72,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "scale",
+            "scale": 1.23794e+27,
+            "seconds": 0.00212538
+          },
+          {
+            "id": 73,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.142879
+          },
+          {
+            "id": 74,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.00036825
+          },
+          {
+            "id": 75,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.0305814
+          },
+          {
+            "id": 76,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000188417
+          },
+          {
+            "id": 77,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "rotate",
+            "scale": 35184400000000.0,
+            "seconds": 0.0249579
+          },
+          {
+            "id": 78,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "add",
+            "scale": 35184400000000.0,
+            "seconds": 0.000603
+          },
+          {
+            "id": 79,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "scale",
+            "scale": 1.23794e+27,
+            "seconds": 0.00144413
+          },
+          {
+            "id": 80,
+            "level": 1,
+            "noise_scale_degree": 2,
+            "op": "mul",
+            "scale": 1.23794e+27,
+            "seconds": 0.0343843
+          },
+          {
+            "id": 81,
+            "level": 1,
+            "noise_scale_degree": 2,
+            "op": "sub",
+            "scale": 1.23794e+27,
+            "seconds": 0.000226333
+          },
+          {
+            "id": 82,
+            "level": 2,
+            "noise_scale_degree": 2,
+            "op": "mask",
+            "scale": 1.23794e+27,
+            "seconds": 0.0284508
+          },
+          {
+            "id": 83,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "input",
+            "scale": 35184400000000.0,
+            "seconds": 0.0625495
+          },
+          {
+            "id": 84,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "weights",
+            "scale": 1.23794e+27,
+            "seconds": 0.00334937
+          },
+          {
+            "id": 85,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "rotate",
+            "scale": 1.23794e+27,
+            "seconds": 0.0335173
+          },
+          {
+            "id": 86,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "add",
+            "scale": 1.23794e+27,
+            "seconds": 0.0004915
+          },
+          {
+            "id": 87,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "rotate",
+            "scale": 1.23794e+27,
+            "seconds": 0.0353811
+          },
+          {
+            "id": 88,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "add",
+            "scale": 1.23794e+27,
+            "seconds": 0.000587583
+          },
+          {
+            "id": 89,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "rotate",
+            "scale": 1.23794e+27,
+            "seconds": 0.0358318
+          },
+          {
+            "id": 90,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "add",
+            "scale": 1.23794e+27,
+            "seconds": 0.00278904
+          },
+          {
+            "id": 91,
+            "level": 1,
+            "noise_scale_degree": 2,
+            "op": "mask",
+            "scale": 1.23794e+27,
+            "seconds": 0.0112226
+          },
+          {
+            "id": 92,
+            "level": 0,
+            "noise_scale_degree": 1,
+            "op": "input",
+            "scale": 35184400000000.0,
+            "seconds": 0.0617688
+          },
+          {
+            "id": 93,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "weights",
+            "scale": 1.23794e+27,
+            "seconds": 0.004258
+          },
+          {
+            "id": 94,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "rotate",
+            "scale": 1.23794e+27,
+            "seconds": 0.0312965
+          },
+          {
+            "id": 95,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "add",
+            "scale": 1.23794e+27,
+            "seconds": 0.000572292
+          },
+          {
+            "id": 96,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "rotate",
+            "scale": 1.23794e+27,
+            "seconds": 0.0217642
+          },
+          {
+            "id": 97,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "add",
+            "scale": 1.23794e+27,
+            "seconds": 0.000365292
+          },
+          {
+            "id": 98,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "rotate",
+            "scale": 1.23794e+27,
+            "seconds": 0.0253057
+          },
+          {
+            "id": 99,
+            "level": 0,
+            "noise_scale_degree": 2,
+            "op": "add",
+            "scale": 1.23794e+27,
+            "seconds": 0.000516666
+          },
+          {
+            "id": 100,
+            "level": 1,
+            "noise_scale_degree": 2,
+            "op": "mask",
+            "scale": 1.23794e+27,
+            "seconds": 0.0106245
+          }
+        ]
+      }
+    ],
+    "setup_bytes": 23356085,
+    "setup_seconds": 0.5125840840046294,
+    "transport": "http",
+    "workload": "analytics"
+  },
+  "interpretation": "Recomputation fits the declared memory budget; it is not a universal latency improvement.",
+  "ordinary_sharing": "shared",
+  "selected_prediction": {
+    "calibrated": true,
+    "online_seconds": 3.0026735135056395,
+    "peak_live_bytes": 6561535,
+    "request_bytes": 2624614,
+    "requests": 10,
+    "response_bytes": 9186149,
+    "setup_bytes": 23344408,
+    "total_seconds": 87.65137376615341
+  },
+  "tight_budget_sharing": "per-output",
+  "tuned_shared_baseline_feasible": false
+}

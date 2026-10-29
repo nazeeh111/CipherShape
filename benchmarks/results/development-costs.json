@@ -1,0 +1,23 @@
+{
+  "base_setup_bytes": 6820573,
+  "base_setup_seconds": 0.5182647079927847,
+  "ciphertext_bytes": 1312307,
+  "decryption_seconds_per_ciphertext": 0.5170438245051108,
+  "encryption_seconds_per_ciphertext": 0.31690044531205785,
+  "live_ciphertext_bytes": 1312307,
+  "measured": true,
+  "op_seconds": {
+    "add": 0.000429438,
+    "input": 0.10274174999999999,
+    "mask": 0.01340175,
+    "mul": 0.05768935,
+    "rotate": 0.037320599999999995,
+    "scale": 0.003693165,
+    "sub": 0.0002944795,
+    "weights": 0.003398045
+  },
+  "request_base_seconds": 0.45412189600563974,
+  "rotation_key_bytes": 5507945,
+  "rotation_load_seconds": 0.0,
+  "rotation_setup_seconds": 0.14336450050177518
+}

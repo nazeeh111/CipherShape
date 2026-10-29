@@ -1,0 +1,170 @@
+{
+  "costs_sha256": "0290c0d0ac2fa20a1ad28a9301af56b490b155613c1c1011ae3cbd29ef098af5",
+  "frozen": {
+    "graphs": {
+      "analytics8": "9ee8cfdd53f3e1e726fdfed1c4e5afa047fb82587c31f7712f83fa885bd7bdf4",
+      "model4": "cc70a1912696772ce143ab715bb0a5c25461acb758c7d39d1bd58dbe6cc0dac3"
+    },
+    "parameters": {
+      "depth": 4,
+      "first_mod_bits": 55,
+      "scale_bits": 45,
+      "security": "HEStd_128_classic"
+    },
+    "public_fixtures": {
+      "analytics8": [
+        {
+          "x": [
+            -0.8,
+            -0.5,
+            -0.2,
+            0.1,
+            0.4,
+            0.7,
+            -0.7,
+            -0.4
+          ],
+          "y": [
+            -0.3,
+            0.0,
+            0.3,
+            0.6,
+            -0.8,
+            -0.5,
+            -0.2,
+            0.1
+          ]
+        },
+        {
+          "x": [
+            1.0,
+            -1.0,
+            1.0,
+            -1.0,
+            1.0,
+            -1.0,
+            1.0,
+            -1.0
+          ],
+          "y": [
+            -1.0,
+            1.0,
+            -1.0,
+            1.0,
+            -1.0,
+            1.0,
+            -1.0,
+            1.0
+          ]
+        }
+      ],
+      "model4": [
+        {
+          "features": [
+            -0.8,
+            -0.5,
+            -0.2,
+            0.1
+          ]
+        },
+        {
+          "features": [
+            1.0,
+            -1.0,
+            1.0,
+            -1.0
+          ]
+        }
+      ]
+    },
+    "request_horizons": [
+      1,
+      100
+    ],
+    "requests_executed_per_variant": 2,
+    "specification": {
+      "confirmation": [
+        {
+          "application": "analytics",
+          "graph_sha256": "007cd153acbbdf5b03c03612c96f0659b4e887d5c339aad5fcca9a6f8fd30363",
+          "name": "analytics8",
+          "shape": 8
+        },
+        {
+          "application": "trained_model",
+          "graph_sha256": "7c1daf5a99ad965afd453f8aa00f705676470afb859942d1c7ad6f5d1d129615",
+          "name": "model4",
+          "shape": 4
+        }
+      ],
+      "date": "2026-10-29",
+      "development": [
+        "analytics4",
+        "dot8"
+      ],
+      "external_comparison": {
+        "HEIR": "only genuinely matched operators; unavailable measurements must be disclosed"
+      },
+      "frozen_before_calibration": true,
+      "horizons": [
+        1,
+        100
+      ],
+      "negative_cases": [
+        "single-output model has no multi-output sharing benefit",
+        "one request setup may not amortize",
+        "tight memory budget can make recomputation legal while retention fails"
+      ],
+      "request_patterns": [
+        "deterministic mixed signs",
+        "changed private inputs with same program and key epoch"
+      ],
+      "requests_per_variant": 2,
+      "security": {
+        "depth": 4,
+        "first_mod_bits": 55,
+        "packing_slots": "ring_dimension/2",
+        "ring_selection": "OpenFHE automatic",
+        "scale_bits": 45,
+        "scaling": "FLEXIBLEAUTO",
+        "target": "HEStd_128_classic"
+      },
+      "tolerance": 0.0001,
+      "variants": [
+        "independent",
+        "naive",
+        "tuned",
+        "planner"
+      ],
+      "version": 1
+    },
+    "specification_sha256": "e593941581efde09dfb7ec91ea2a5432582a1dc4391d195ff47f21e42c805cab",
+    "variants": [
+      "independent",
+      "naive",
+      "tuned",
+      "planner"
+    ]
+  },
+  "host": {
+    "machine": "arm64",
+    "native_sha256": {
+      "ciphershape-client": "3bbd387f9193ab1d0ee4b83bc07d09fe72681facddcaa9bde6e92dbe6fc29592",
+      "ciphershape-server": "7e0cbe54e84b9d2daecaa9a685b4113243de443ee0d1aab973c7bf520107e827"
+    },
+    "platform": "macOS-27.2-arm64-arm-64bit-Mach-O",
+    "python": "3.14.0",
+    "source_sha256": {
+      "native/ckks_serial.h": "9d29a194a387c3c55808ec8f59571c8da46ef42468f40b2cf3b9bc1dba0eb91c",
+      "native/worker.cpp": "85175d2daa874b982e6e01994349d98fdf5bb5593aaf7708b71f8da0343b57f7",
+      "scripts/study.py": "acabd092f872500d4f155fbf3debd9a99c2b02f14384aa053dc001e90c06be5c",
+      "src/ciphershape/__init__.py": "a19474f2eada07d1d24e575b45355063bb5007f754efe1058c5cef5aee34ad12",
+      "src/ciphershape/api.py": "64c9b2fdc52bfce9811d56b384a3569d05b15dfb3e6e5dc7fe7adc997dce84bf",
+      "src/ciphershape/apps.py": "76cb00ef0faf6f6b2b9b9195d1d3c4c0ca93001599bb33b2e3ff6411ba32fa61",
+      "src/ciphershape/cli.py": "5e30a1bbd2721253d3d4cd0c78ca0c1f123640d9d7de1ab2d4115658779f10f8",
+      "src/ciphershape/graph.py": "c6640cddcaee03c2f4570c5c8de49a467f16e5e695f7e04757bf24c5ffefed56",
+      "src/ciphershape/planner.py": "de73ac8090129ba33780679d7f219160b8848179454bd1897bb9decd955c99bc",
+      "src/ciphershape/runtime.py": "af803597f84f79f4b6811db9e049d4e5983a29dcfa991db965507582e66c28af"
+    }
+  }
+}

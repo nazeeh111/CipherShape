@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ciphershape"
+version = "0.1.0"
+description = "Deployment-budgeted multi-output numerical compilation over OpenFHE CKKS"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/nazeeh111/CipherShape"
+Issues = "https://github.com/nazeeh111/CipherShape/issues"
+
+[project.scripts]
+ciphershape = "ciphershape.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+

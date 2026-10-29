@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "frozen_before_calibration": true,
+  "date": "2026-10-29",
+  "security": {
+    "target": "HEStd_128_classic",
+    "depth": 4,
+    "scale_bits": 45,
+    "first_mod_bits": 55,
+    "scaling": "FLEXIBLEAUTO",
+    "ring_selection": "OpenFHE automatic",
+    "packing_slots": "ring_dimension/2"
+  },
+  "confirmation": [
+    {
+      "name": "analytics8",
+      "application": "analytics",
+      "shape": 8,
+      "graph_sha256": "007cd153acbbdf5b03c03612c96f0659b4e887d5c339aad5fcca9a6f8fd30363"
+    },
+    {
+      "name": "model4",
+      "application": "trained_model",
+      "shape": 4,
+      "graph_sha256": "7c1daf5a99ad965afd453f8aa00f705676470afb859942d1c7ad6f5d1d129615"
+    }
+  ],
+  "requests_per_variant": 2,
+  "horizons": [
+    1,
+    100
+  ],
+  "variants": [
+    "independent",
+    "naive",
+    "tuned",
+    "planner"
+  ],
+  "development": [
+    "analytics4",
+    "dot8"
+  ],
+  "tolerance": 0.0001,
+  "request_patterns": [
+    "deterministic mixed signs",
+    "changed private inputs with same program and key epoch"
+  ],
+  "negative_cases": [
+    "single-output model has no multi-output sharing benefit",
+    "one request setup may not amortize",
+    "tight memory budget can make recomputation legal while retention fails"
+  ],
+  "external_comparison": {
+    "HEIR": "only genuinely matched operators; unavailable measurements must be disclosed"
+  }
+}

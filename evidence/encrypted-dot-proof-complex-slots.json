@@ -1,0 +1,92 @@
+{
+  "accepted": true,
+  "reference": {
+    "dot": -0.40625
+  },
+  "decrypted": {
+    "dot": -0.40625000331549704
+  },
+  "encryption_error": 3.3154970435766984e-09,
+  "server_client_only_files_absent": true,
+  "parameters": {
+    "ring_dimension": 16384,
+    "slots": 8192,
+    "depth": 4,
+    "scale_bits": 45,
+    "first_mod_bits": 55,
+    "security": "HEStd_128_classic",
+    "key_tag": "d7d36b6b0764754058347542a680dd43",
+    "peak_rss_bytes": 33210368
+  },
+  "encryption_seconds": 0.2780296660203021,
+  "encryption_peak_rss_bytes": 18743296,
+  "request_bytes": 1312705,
+  "request_id": "979caa3a-fa06-4445-a27f-d8eeed4e9f1f",
+  "evaluation_seconds": 0.136047,
+  "peak_live_ciphertexts": 3,
+  "peak_coefficient_bytes": 3932160,
+  "peak_rss_bytes": 40288256,
+  "trace": [
+    {
+      "op": "input",
+      "id": 0,
+      "seconds": 0.0602078,
+      "level": 0,
+      "scale": 35184400000000.0,
+      "noise_scale_degree": 1
+    },
+    {
+      "op": "weights",
+      "id": 1,
+      "seconds": 0.00535388,
+      "level": 0,
+      "scale": 1.23794e+27,
+      "noise_scale_degree": 2
+    },
+    {
+      "op": "rotate",
+      "id": 2,
+      "seconds": 0.0275105,
+      "level": 0,
+      "scale": 1.23794e+27,
+      "noise_scale_degree": 2
+    },
+    {
+      "op": "add",
+      "id": 3,
+      "seconds": 0.000484167,
+      "level": 0,
+      "scale": 1.23794e+27,
+      "noise_scale_degree": 2
+    },
+    {
+      "op": "rotate",
+      "id": 4,
+      "seconds": 0.0242405,
+      "level": 0,
+      "scale": 1.23794e+27,
+      "noise_scale_degree": 2
+    },
+    {
+      "op": "add",
+      "id": 5,
+      "seconds": 0.000277792,
+      "level": 0,
+      "scale": 1.23794e+27,
+      "noise_scale_degree": 2
+    },
+    {
+      "op": "mask",
+      "id": 6,
+      "seconds": 0.0100561,
+      "level": 1,
+      "scale": 1.23794e+27,
+      "noise_scale_degree": 2
+    }
+  ],
+  "server_process_seconds": 0.7371048750064801,
+  "response_bytes": 1050583,
+  "decryption_seconds": 0.35582354199141264,
+  "decryption_peak_rss_bytes": 16662528,
+  "max_nonresult_slot": 2.233480229212365e-10
+}

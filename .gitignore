@@ -1,0 +1,14 @@
+.venv/
+.runtime/
+build/
+dist/
+*.egg-info/
+__pycache__/
+.pytest_cache/
+.DS_Store
+private/
+runs/
+/TASK_STATE.md
+/evidence/*
+!/evidence/encrypted-dot-proof.json
+!/evidence/encrypted-dot-proof-complex-slots.json

@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.20)
+project(ciphershape VERSION 0.1.0 LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+find_package(OpenFHE 1.6.1 EXACT CONFIG REQUIRED)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenFHE_CXX_FLAGS}")
+include_directories(${OpenFHE_INCLUDE} ${OpenFHE_INCLUDE}/third-party/include ${OpenFHE_INCLUDE}/core ${OpenFHE_INCLUDE}/pke ${OpenFHE_INCLUDE}/binfhe)
+link_directories(${OpenFHE_LIBDIR})
+add_executable(ciphershape-client worker.cpp)
+target_compile_definitions(ciphershape-client PRIVATE CS_CLIENT=1)
+add_executable(ciphershape-server worker.cpp)
+foreach(target ciphershape-client ciphershape-server)
+  # The library's numerical kernels are already optimized. Compiling cereal's
+  # large template boundary at -O0 avoids excessive memory in small local builds.
+  target_compile_options(${target} PRIVATE -O0 -g0)
+  target_link_libraries(${target} PRIVATE ${OpenFHE_STATIC_LIBRARIES})
+endforeach()

@@ -1,0 +1,213 @@
+{
+  "accepted": true,
+  "fixed_security": "HEStd_128_classic",
+  "ring_dimension": 16384,
+  "depth": 4,
+  "scale_bits": 45,
+  "tolerance": 0.0001,
+  "requests_executed": 16,
+  "rows": [
+    {
+      "application": "analytics",
+      "variant": "independent",
+      "layout": "packed",
+      "rotation_key_basis": [
+        1,
+        2,
+        4
+      ],
+      "setup_bytes": 23356087,
+      "first_request_seconds": 11.4368293749867,
+      "repeated_request_seconds": 12.46734450000804,
+      "mean_of_two_seconds": 11.95208693749737,
+      "peak_coefficient_bytes": 6553600,
+      "peak_server_rss_bytes": 54493184,
+      "max_encryption_error": 4.353524238062603e-09,
+      "request_body_bytes": [
+        3499992,
+        3499992
+      ],
+      "response_body_bytes": [
+        8763692,
+        8763693
+      ]
+    },
+    {
+      "application": "analytics",
+      "variant": "naive",
+      "layout": "packed",
+      "rotation_key_basis": [
+        1,
+        2,
+        4
+      ],
+      "setup_bytes": 23352565,
+      "first_request_seconds": 8.072946874977788,
+      "repeated_request_seconds": 5.938354542013258,
+      "mean_of_two_seconds": 7.005650708495523,
+      "peak_coefficient_bytes": 82837504,
+      "peak_server_rss_bytes": 125157376,
+      "max_encryption_error": 9.375541389227053e-09,
+      "request_body_bytes": [
+        3499992,
+        3499992
+      ],
+      "response_body_bytes": [
+        8760283,
+        8760287
+      ]
+    },
+    {
+      "application": "analytics",
+      "variant": "tuned",
+      "layout": "packed",
+      "rotation_key_basis": [
+        1,
+        2,
+        4
+      ],
+      "setup_bytes": 23354087,
+      "first_request_seconds": 8.756291792000411,
+      "repeated_request_seconds": 7.643984458991326,
+      "mean_of_two_seconds": 8.200138125495869,
+      "peak_coefficient_bytes": 9175040,
+      "peak_server_rss_bytes": 61603840,
+      "max_encryption_error": 9.444935741657157e-09,
+      "request_body_bytes": [
+        3499992,
+        3499992
+      ],
+      "response_body_bytes": [
+        8760293,
+        8760272
+      ]
+    },
+    {
+      "application": "analytics",
+      "variant": "planner",
+      "layout": "packed",
+      "rotation_key_basis": [
+        1,
+        2,
+        4
+      ],
+      "setup_bytes": 23354087,
+      "first_request_seconds": 6.478591834020335,
+      "repeated_request_seconds": 10.513724749995163,
+      "mean_of_two_seconds": 8.496158292007749,
+      "peak_coefficient_bytes": 9175040,
+      "peak_server_rss_bytes": 58048512,
+      "max_encryption_error": 1.5110218631875227e-09,
+      "request_body_bytes": [
+        3499992,
+        3499992
+      ],
+      "response_body_bytes": [
+        8760294,
+        8760273
+      ]
+    },
+    {
+      "application": "trained_model",
+      "variant": "independent",
+      "layout": "packed",
+      "rotation_key_basis": [
+        1,
+        2
+      ],
+      "setup_bytes": 17838440,
+      "first_request_seconds": 1.8411220830166712,
+      "repeated_request_seconds": 1.707942291017389,
+      "mean_of_two_seconds": 1.77453218701703,
+      "peak_coefficient_bytes": 3932160,
+      "peak_server_rss_bytes": 43663360,
+      "max_encryption_error": 7.49097450736258e-10,
+      "request_body_bytes": [
+        1750162,
+        1750162
+      ],
+      "response_body_bytes": [
+        1401533,
+        1401532
+      ]
+    },
+    {
+      "application": "trained_model",
+      "variant": "naive",
+      "layout": "packed",
+      "rotation_key_basis": [
+        1,
+        2
+      ],
+      "setup_bytes": 17838287,
+      "first_request_seconds": 1.1860017089929897,
+      "repeated_request_seconds": 1.573929375008447,
+      "mean_of_two_seconds": 1.3799655420007184,
+      "peak_coefficient_bytes": 8912896,
+      "peak_server_rss_bytes": 46776320,
+      "max_encryption_error": 1.028515383971751e-09,
+      "request_body_bytes": [
+        1750162,
+        1750162
+      ],
+      "response_body_bytes": [
+        1401532,
+        1401532
+      ]
+    },
+    {
+      "application": "trained_model",
+      "variant": "tuned",
+      "layout": "packed",
+      "rotation_key_basis": [
+        1
+      ],
+      "setup_bytes": 12331877,
+      "first_request_seconds": 2.0202782500127796,
+      "repeated_request_seconds": 1.2949342500069179,
+      "mean_of_two_seconds": 1.6576062500098487,
+      "peak_coefficient_bytes": 3932160,
+      "peak_server_rss_bytes": 40943616,
+      "max_encryption_error": 7.779930588647233e-10,
+      "request_body_bytes": [
+        1750162,
+        1750162
+      ],
+      "response_body_bytes": [
+        1401628,
+        1401629
+      ]
+    },
+    {
+      "application": "trained_model",
+      "variant": "planner",
+      "layout": "packed",
+      "rotation_key_basis": [
+        1
+      ],
+      "setup_bytes": 12331881,
+      "first_request_seconds": 1.4573697909945622,
+      "repeated_request_seconds": 3.3337757919798605,
+      "mean_of_two_seconds": 2.3955727914872114,
+      "peak_coefficient_bytes": 3932160,
+      "peak_server_rss_bytes": 37257216,
+      "max_encryption_error": 4.972743328224283e-10,
+      "request_body_bytes": [
+        1750162,
+        1750162
+      ],
+      "response_body_bytes": [
+        1401626,
+        1401625
+      ]
+    }
+  ],
+  "max_encryption_error": 9.444935741657157e-09,
+  "limits": [
+    "Two samples per variant on a shared local Mac; timing noise is visible.",
+    "No consistent measured latency advantage over the tuned baseline.",
+    "One/100-request totals are projections, not additional measurements.",
+    "HEIR executable unavailable on this host; no matched external compiler timing.",
+    "Automatic rescaling is charged in measured primitive durations; internal rescale-call counts are not directly exposed."
+  ]
+}

@@ -1,0 +1,9 @@
+include README.md LICENSE
+include evidence/encrypted-dot-proof.json evidence/encrypted-dot-proof-complex-slots.json
+recursive-include native *.cpp *.h CMakeLists.txt
+recursive-include scripts *.py
+recursive-include docs *.md *.mmd *.txt
+recursive-include examples *.json
+recursive-include benchmarks *.json
+recursive-include assets/demo *.json *.cast *.mp4 *.png
+recursive-include tests *.py

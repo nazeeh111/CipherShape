@@ -1,0 +1,25 @@
+flowchart LR
+    Spec[Public typed workload<br/>shapes, constants, ranges, allowed outputs] --> Compiler[Validate and lower graph]
+    Compiler --> Reference[Client plaintext reference]
+    Compiler --> Search[Bounded deployment planner<br/>layout, key basis, sharing, schedule]
+    Costs[Public development measurements<br/>setup, bytes, operations, memory] --> Search
+    Budget[Request horizon and resource limits] --> Search
+    Search --> Plan[Versioned compiled plan]
+    subgraph Client[Client trust boundary]
+        Keygen[OpenFHE key generation] --> Secret[Secret key stays here]
+        Inputs[Private values] --> Encrypt[Range check and encrypt]
+        Keygen --> Encrypt
+        Decrypt[Bind response and decrypt] --> Answers[Allowed numerical outputs]
+        Secret --> Decrypt
+        Reference --> Check[Three-path numerical check]
+        Answers --> Check
+    end
+    subgraph Server[Honest-but-curious evaluator]
+        Auth[Authenticate owner / program / epoch] --> Native[Fresh bounded native process]
+        Native --> Mask[Full-slot output mask]
+    end
+    Plan --> Keygen
+    Plan --> Native
+    Keygen -->|Public context and evaluation keys| Native
+    Encrypt -->|Authenticated ciphertext request| Auth
+    Mask -->|Ciphertext response| Decrypt

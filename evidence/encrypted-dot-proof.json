@@ -1,0 +1,92 @@
+{
+  "accepted": true,
+  "reference": {
+    "dot": -0.40625
+  },
+  "decrypted": {
+    "dot": -0.4062500022511072
+  },
+  "encryption_error": 2.2511071895436885e-09,
+  "server_client_only_files_absent": true,
+  "parameters": {
+    "ring_dimension": 16384,
+    "slots": 8192,
+    "depth": 4,
+    "scale_bits": 45,
+    "first_mod_bits": 55,
+    "security": "HEStd_128_classic",
+    "key_tag": "0d90e02549bfe496b60880775bce097d",
+    "peak_rss_bytes": 33488896
+  },
+  "encryption_seconds": 0.5155192079837434,
+  "encryption_peak_rss_bytes": 18563072,
+  "request_bytes": 1312705,
+  "request_id": "f664b53f-dfd6-456f-8ab9-0d70e4353a62",
+  "evaluation_seconds": 0.232823,
+  "peak_live_ciphertexts": 3,
+  "peak_coefficient_bytes": 3932160,
+  "peak_rss_bytes": 42074112,
+  "trace": [
+    {
+      "op": "input",
+      "id": 0,
+      "seconds": 0.0975444,
+      "level": 0,
+      "scale": 35184400000000.0,
+      "noise_scale_degree": 1
+    },
+    {
+      "op": "weights",
+      "id": 1,
+      "seconds": 0.00321983,
+      "level": 0,
+      "scale": 1.23794e+27,
+      "noise_scale_degree": 2
+    },
+    {
+      "op": "rotate",
+      "id": 2,
+      "seconds": 0.0256634,
+      "level": 0,
+      "scale": 1.23794e+27,
+      "noise_scale_degree": 2
+    },
+    {
+      "op": "add",
+      "id": 3,
+      "seconds": 0.000306834,
+      "level": 0,
+      "scale": 1.23794e+27,
+      "noise_scale_degree": 2
+    },
+    {
+      "op": "rotate",
+      "id": 4,
+      "seconds": 0.0754205,
+      "level": 0,
+      "scale": 1.23794e+27,
+      "noise_scale_degree": 2
+    },
+    {
+      "op": "add",
+      "id": 5,
+      "seconds": 0.000178667,
+      "level": 0,
+      "scale": 1.23794e+27,
+      "noise_scale_degree": 2
+    },
+    {
+      "op": "mask",
+      "id": 6,
+      "seconds": 0.0145453,
+      "level": 1,
+      "scale": 1.23794e+27,
+      "noise_scale_degree": 2
+    }
+  ],
+  "server_process_seconds": 1.167391457973281,
+  "response_bytes": 1050583,
+  "decryption_seconds": 0.47608854199643247,
+  "decryption_peak_rss_bytes": 16793600,
+  "max_nonresult_slot": 2.3622034504209706e-10
+}
