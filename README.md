@@ -25,6 +25,41 @@ bootstrapping or arbitrary-depth execution. The security target is an
 honest-but-curious server following the protocol. Read the
 [security contract](docs/security.md) before using private data.
 
+## Run the prebuilt Mac release
+
+Apple silicon, macOS 27.0 or later, and Python 3.11+. The native archive declares
+macOS 27.0 as its minimum. This path uses the published workers without building
+OpenFHE locally.
+
+Download the [Python wheel](https://github.com/nazeeh111/CipherShape/releases/download/v0.1.0/ciphershape-0.1.0-py3-none-any.whl)
+and [native archive](https://github.com/nazeeh111/CipherShape/releases/download/v0.1.0/ciphershape-native-0.1.0-macos-arm64.tar.gz)
+into a new empty folder. Check both files against the release's
+[SHA256SUMS](https://github.com/nazeeh111/CipherShape/releases/download/v0.1.0/SHA256SUMS):
+
+```sh
+shasum -a 256 -c <<'SHA256'
+f419b941cb2f53504cc3af490b88f987ba6471d8b3384e0900b087d27630f099  ciphershape-0.1.0-py3-none-any.whl
+dd79b48fa526aaf949384e8040f34e52c8de9efba4be2c7fe09cfa6f2e47b031  ciphershape-native-0.1.0-macos-arm64.tar.gz
+SHA256
+```
+
+Continue after both files report `OK`:
+
+```sh
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install --no-index --no-deps ./ciphershape-0.1.0-py3-none-any.whl
+tar -xzf ciphershape-native-0.1.0-macos-arm64.tar.gz
+export CIPHERSHAPE_NATIVE="$PWD/ciphershape-native-0.1.0-macos-arm64/bin"
+ciphershape demo model --out runs/model-1
+ciphershape demo analytics --out runs/analytics-1
+```
+
+The downloaded wheel and workers were checked outside a source checkout on
+macOS 27.2 with Python 3.13. Each application passed two HTTP requests with
+different inputs. Choose a new output directory for another run. The source
+build below remains available for other platforms.
+
 ## Build and run
 
 Requires Python 3.11+, Git, a C++17 compiler and a Unix-like system. The native
