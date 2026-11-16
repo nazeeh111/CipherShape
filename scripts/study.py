@@ -147,7 +147,8 @@ def run_plan(w: Workload, plan, destination: Path, transport: str,
                 encryption_wall = time.perf_counter() - enc_begin
                 server_begin = time.perf_counter()
                 if transport == "http":
-                    server = evaluate_http(*connection, request, response, w.budget.max_payload_bytes)
+                    server = evaluate_http(*connection, request, response, w.budget.max_payload_bytes,
+                                           public=public)
                 else:
                     server = evaluate_server(public, request, response)
                 server_wall = time.perf_counter() - server_begin

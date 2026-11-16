@@ -8,12 +8,14 @@ from pathlib import Path
 import sys
 import time
 
+from . import __version__
 from .apps import analytics, analytics_reference, trained_model, model_reference, model_task_accuracy
 from .graph import Workload, evaluate
 from .planner import Costs, Plan, choose, compile_plan
 from .runtime import (ProtocolError, setup, encrypt, evaluate_server, decrypt,
                       read_json, write_json, binary_dir, folder_bytes)
 from .api import local_endpoint, evaluate_http
+from .artifacts import CleanupPending, recover_artifacts
 
 
 def application(name: str) -> Workload:
@@ -37,7 +39,8 @@ def load_plan(public: Path) -> Plan:
 
 
 def run_demo(app: str, destination: Path, costs: Costs | None = None,
-             variant: str = "planner", changed: bool = False, transport: str = "http") -> dict:
+             variant: str = "planner", changed: bool = False, transport: str = "http",
+             *, on_prepared=None) -> dict:
     w = application(app)
     start = time.perf_counter()
     if variant == "planner":
@@ -49,9 +52,9 @@ def run_demo(app: str, destination: Path, costs: Costs | None = None,
     compilation = time.perf_counter() - start
     if destination.exists():
         raise ProtocolError("demo destination must be new")
-    destination.mkdir(parents=True)
+    destination.mkdir(mode=0o700, parents=True)
     pub, priv = destination / "server", destination / "client/private"
-    manifest = setup(w, plan, pub, priv)
+    manifest = setup(w, plan, pub, priv, on_prepared=on_prepared)
     inp = default_inputs(app, changed)
     runs = []
     with local_endpoint(pub) if transport == "http" else nullcontext(None) as endpoint:
@@ -60,20 +63,21 @@ def run_demo(app: str, destination: Path, costs: Costs | None = None,
                 inp = default_inputs(app, not changed)
             request, response = destination / f"request-{i}", destination / f"response-{i}"
             begin = time.perf_counter()
-            enc = encrypt(w, plan, pub, priv, inp, request)
-            server = (evaluate_http(endpoint[0], endpoint[1], request, response) if endpoint else
-                      evaluate_server(pub, request, response))
+            enc = encrypt(w, plan, pub, priv, inp, request, on_prepared=on_prepared)
+            server = (evaluate_http(endpoint[0], endpoint[1], request, response,
+                                    public=pub, on_prepared=on_prepared) if endpoint else
+                      evaluate_server(pub, request, response, on_prepared=on_prepared))
             answers, dec = decrypt(pub, priv, request, response)
             reference = (analytics_reference if app == "analytics" else model_reference)(inp)
             approximated = evaluate(w, inp)
             approximation_error = max(abs(reference[k] - approximated[k]) for k in reference)
             encryption_error = max(abs(approximated[k] - answers[k]) for k in reference)
             passed = approximation_error + encryption_error <= w.tolerance and dec["max_nonresult_slot"] <= w.tolerance
-            runs.append({"request": i, "inputs_changed": bool(i), "original_float": reference,
+            runs.append({**enc, **server, **dec,
+                         "request": i, "inputs_changed": bool(i), "original_float": reference,
                          "approximated_plaintext": approximated, "decrypted": answers,
                          "approximation_error": approximation_error, "encryption_error": encryption_error,
-                         "accepted": passed, "end_to_end_seconds": time.perf_counter() - begin,
-                         **enc, **server, **dec})
+                         "accepted": passed, "end_to_end_seconds": time.perf_counter() - begin})
     result = {"application": app, "variant": variant, "program_id": plan.program_id,
               "parameters": manifest["parameters"], "plan": {"layout": plan.layout,
               "basis": plan.basis, "sharing": plan.sharing, "retention": plan.retention, "stats": plan.stats},
@@ -91,25 +95,30 @@ def run_demo(app: str, destination: Path, costs: Costs | None = None,
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser(description="Compile small numerical endpoints for encrypted OpenFHE evaluation.")
+    parser = argparse.ArgumentParser(
+        description="Compile small numerical endpoints for encrypted OpenFHE evaluation.",
+        epilog="Exit 0: success; 2: refusal/failure; 3: artifacts published, cleanup pending; 130: interrupted. Use a new destination for each run. Recover only the exact journal named by an interrupted attempt.")
+    parser.add_argument("--version", action="version", version=f"CipherShape {__version__}")
     sub = parser.add_subparsers(dest="command", required=True)
-    p = sub.add_parser("demo", help="run both changed-input requests and verify three numerical paths locally")
+    p = sub.add_parser("demo", help="run both changed-input requests and verify three numerical paths locally",
+        description="Run two synthetic requests through the native client/server workers. The client compares original float, compiled plaintext and decrypted results. No plaintext fallback.")
     p.add_argument("application", choices=["analytics", "model"])
-    p.add_argument("--out", type=Path, required=True)
+    p.add_argument("--out", type=Path, required=True, help="New directory for this run; existing paths are refused")
     p.add_argument("--variant", choices=["planner", "independent", "naive", "tuned"], default="planner")
-    p.add_argument("--costs", type=Path)
-    p.add_argument("--transport", choices=["http", "file"], default="http")
+    p.add_argument("--costs", type=Path, help="Measured-cost JSON; default costs are provisional estimates")
+    p.add_argument("--transport", choices=["http", "file"], default="http",
+        help="http: authenticated loopback demo (default); file: local file exchange")
     p = sub.add_parser("compile", help="select a public plan and create separated client/server artifacts")
     p.add_argument("application", choices=["analytics", "model"])
-    p.add_argument("--public", type=Path, required=True)
-    p.add_argument("--private", type=Path, required=True)
+    p.add_argument("--public", type=Path, required=True, help="New server-side public artifact directory")
+    p.add_argument("--private", type=Path, required=True, help="New client-only key directory; keep this on the client")
     p.add_argument("--costs", type=Path)
     p = sub.add_parser("encrypt", help="client: validate private JSON and create ciphertext request")
     p.add_argument("application", choices=["analytics", "model"])
     p.add_argument("--public", type=Path, required=True)
     p.add_argument("--private", type=Path, required=True)
-    p.add_argument("--input", type=Path, required=True)
-    p.add_argument("--request", type=Path, required=True)
+    p.add_argument("--input", type=Path, required=True, help="Client-side input JSON; never send this file to the server")
+    p.add_argument("--request", type=Path, required=True, help="New ciphertext request directory")
     p = sub.add_parser("evaluate", help="server: evaluate ciphertext request, without client files")
     p.add_argument("--public", type=Path, required=True)
     p.add_argument("--request", type=Path, required=True)
@@ -117,31 +126,52 @@ def main(argv=None):
     p = sub.add_parser("decrypt", help="client: decrypt returned endpoints locally")
     for name in ["public", "private", "request", "response"]:
         p.add_argument("--" + name, type=Path, required=True)
+    p = sub.add_parser("recover", help="discard one inactive uncommitted attempt, preserving published artifacts",
+        description="Recover one exact journal after its owning process exits. Active or changed journals are refused; ambiguous publication preserves artifacts for inspection.")
+    p.add_argument("--journal", type=Path, required=True, help="Exact recovery journal printed by the interrupted attempt")
     args = parser.parse_args(argv)
+
+    def prepared(journal):
+        print(f"CipherShape recovery journal: {journal}", file=sys.stderr, flush=True)
+
     try:
         costs = Costs(**read_json(args.costs)) if getattr(args, "costs", None) else Costs()
         if args.command == "demo":
-            report = run_demo(args.application, args.out, costs, args.variant, transport=args.transport)
+            report = run_demo(args.application, args.out, costs, args.variant,
+                              transport=args.transport, on_prepared=prepared)
             print(json.dumps({"accepted": report["accepted"], "client_report": str((args.out / "client/report.json").resolve()),
                               "program_id": report["program_id"], "calibrated": report["calibrated"]}, indent=2))
         elif args.command == "compile":
             w = application(args.application)
             plan, candidates = choose(w, costs, w.budget.requests, w.budget.upload_bytes_per_second)
-            manifest = setup(w, plan, args.public, args.private)
+            manifest = setup(w, plan, args.public, args.private, on_prepared=prepared)
             print(json.dumps({"program_id": manifest["program_id"], "layout": plan.layout, "basis": plan.basis,
                               "candidate_count": len(candidates), "calibrated": costs.measured}, indent=2))
         elif args.command == "encrypt":
             report = encrypt(application(args.application), load_plan(args.public), args.public, args.private,
-                             read_json(args.input), args.request)
+                             read_json(args.input), args.request, on_prepared=prepared)
             print(json.dumps(report, indent=2))
         elif args.command == "evaluate":
-            report = evaluate_server(args.public, args.request, args.response)
+            report = evaluate_server(args.public, args.request, args.response, on_prepared=prepared)
             print(json.dumps(report, indent=2))
+        elif args.command == "recover":
+            print(json.dumps(recover_artifacts(args.journal), indent=2))
         else:
             answers, _ = decrypt(args.public, args.private, args.request, args.response)
             print(json.dumps(answers, indent=2))
+    except CleanupPending as exc:
+        print(f"CipherShape: {exc}. Do not repeat publication at the same destination.", file=sys.stderr)
+        if exc.cleanup_error_type == "PermissionError":
+            print("Cleanup was denied; resolve that permission boundary before recovery.", file=sys.stderr)
+        return 3
+    except KeyboardInterrupt as exc:
+        state = getattr(exc, "artifact_state", "interrupted")
+        print(f"CipherShape: interrupted; artifact state: {state}", file=sys.stderr)
+        return 130
     except (ValueError, OSError, KeyError, TypeError) as exc:
         print(f"CipherShape: {exc}", file=sys.stderr)
+        if getattr(exc, "artifact_failure_receipt", None):
+            print(f"Artifact receipt: {exc.artifact_failure_receipt}", file=sys.stderr)
         return 2
     return 0
 

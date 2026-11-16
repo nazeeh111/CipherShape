@@ -9,6 +9,8 @@ __pycache__/
 private/
 runs/
 /TASK_STATE.md
+.ciphershape-stage-*/
+.ciphershape-failure-*.json
 /evidence/*
 !/evidence/encrypted-dot-proof.json
 !/evidence/encrypted-dot-proof-complex-slots.json

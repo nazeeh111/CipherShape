@@ -75,8 +75,10 @@ The recorded [silent replay](../assets/demo/ciphershape-demo.mp4) uses actual
 HTTP execution reports. Reading holds are edited; the [asciicast](../assets/demo/demo.cast)
 preserves execution timing. Re-record with `python scripts/record_demo.py
 --costs benchmarks/results/development-costs.json --out runs/demo-new`.
-The optional `scripts/render_replay.py` uses Pillow and FFmpeg to render those
-reports; pass a local monospace font with `--font`. Font files are not redistributed.
+Render both client reports with Pillow and FFmpeg using
+`python scripts/render_replay.py --source runs/demo-new --out runs/replay-new`.
+The renderer also accepts the retained report pair in `assets/demo`. Pass a
+local monospace font with `--font`. Font files are not redistributed.
 
 Create a fresh clone or source extraction and a new virtual environment. Build
 the native dependency there from its pinned revision. Install the Python wheel

@@ -7,6 +7,8 @@ or inspect the [raw terminal recording](assets/demo/demo.cast).
 
 ![Actual encrypted analytics run: client outputs and public server metadata](assets/demo/preview.png)
 
+The replay presents the retained analytics and model execution reports. Its verdicts and accepted counts come from those reports; edited holds are not a latency measurement.
+
 The client generates keys, checks input ranges and encrypts. A separate server
 process evaluates an OpenFHE CKKS plan using ciphertexts and public evaluation
 keys. The client decrypts the permitted scalar outputs. There is no plaintext
@@ -25,40 +27,41 @@ bootstrapping or arbitrary-depth execution. The security target is an
 honest-but-curious server following the protocol. Read the
 [security contract](docs/security.md) before using private data.
 
-## Run the prebuilt Mac release
+## Use the current source with prebuilt Mac workers
 
-Apple silicon, macOS 27.0 or later, and Python 3.11+. The native archive declares
-macOS 27.0 as its minimum. This path uses the published workers without building
-OpenFHE locally.
+This checkout is **0.1.1.dev0**, an unreleased CLI and artifact-lifecycle successor. The original [v0.1.0 release](https://github.com/nazeeh111/CipherShape/releases/tag/v0.1.0) remains unchanged. Its native workers are compatible with this source; its Python wheel predates the current staging and recovery commands.
 
-Download the [Python wheel](https://github.com/nazeeh111/CipherShape/releases/download/v0.1.0/ciphershape-0.1.0-py3-none-any.whl)
-and [native archive](https://github.com/nazeeh111/CipherShape/releases/download/v0.1.0/ciphershape-native-0.1.0-macos-arm64.tar.gz)
-into a new empty folder. Check both files against the release's
-[SHA256SUMS](https://github.com/nazeeh111/CipherShape/releases/download/v0.1.0/SHA256SUMS):
+Apple silicon, macOS 27.0 or later, and Python 3.11+ are required for the prebuilt workers. Download the [native archive](https://github.com/nazeeh111/CipherShape/releases/download/v0.1.0/ciphershape-native-0.1.0-macos-arm64.tar.gz) into a new empty folder and check its hash against the release's [SHA256SUMS](https://github.com/nazeeh111/CipherShape/releases/download/v0.1.0/SHA256SUMS):
 
 ```sh
 shasum -a 256 -c <<'SHA256'
-f419b941cb2f53504cc3af490b88f987ba6471d8b3384e0900b087d27630f099  ciphershape-0.1.0-py3-none-any.whl
 dd79b48fa526aaf949384e8040f34e52c8de9efba4be2c7fe09cfa6f2e47b031  ciphershape-native-0.1.0-macos-arm64.tar.gz
 SHA256
 ```
 
-Continue after both files report `OK`:
+Continue after the archive reports `OK`. These commands install the current Python source and reuse the existing workers without building OpenFHE:
 
 ```sh
+tar -xzf ciphershape-native-0.1.0-macos-arm64.tar.gz
+git clone https://github.com/nazeeh111/CipherShape.git
 python3 -m venv .venv
 . .venv/bin/activate
-python -m pip install --no-index --no-deps ./ciphershape-0.1.0-py3-none-any.whl
-tar -xzf ciphershape-native-0.1.0-macos-arm64.tar.gz
+python -m pip install ./CipherShape
 export CIPHERSHAPE_NATIVE="$PWD/ciphershape-native-0.1.0-macos-arm64/bin"
-ciphershape demo model --out runs/model-1
+ciphershape --version
 ciphershape demo analytics --out runs/analytics-1
+# Optional public-model example:
+ciphershape demo model --out runs/model-1
 ```
 
-The downloaded wheel and workers were checked outside a source checkout on
-macOS 27.2 with Python 3.13. Each application passed two HTTP requests with
-different inputs. Choose a new output directory for another run. The source
-build below remains available for other platforms.
+`--version` identifies the installed delivery. Choose a new output directory for another run. The source build below remains available for other platforms. The current source was checked with the same digest-verified Mac workers using two fresh synthetic analytics requests over HTTP; both client checks passed. No new model execution, fitting or performance study was used for that check. The earlier standalone release verification used macOS 27.2 and Python 3.13 for both applications.
+
+<details>
+<summary>Original v0.1.0 Python release</summary>
+
+The [historical wheel](https://github.com/nazeeh111/CipherShape/releases/download/v0.1.0/ciphershape-0.1.0-py3-none-any.whl) retains SHA-256 `f419b941cb2f53504cc3af490b88f987ba6471d8b3384e0900b087d27630f099`. It can still be installed with `python -m pip install --no-index --no-deps ./ciphershape-0.1.0-py3-none-any.whl`. It does not contain the source successor's lifecycle/recovery behavior or version command. Keep that wheel and its original evidence as a separate delivery.
+
+</details>
 
 ## Build and run
 
@@ -119,6 +122,50 @@ File hashes bind artifacts; they do not authenticate a remote sender. The
 included HTTP demonstration binds to `127.0.0.1`, uses an ephemeral owner-scoped
 authentication key and returns ciphertexts plus public execution metadata.
 It is not a remote deployment service.
+
+## Publish and recover artifacts
+
+Source builds stage each setup, request and response in private sibling
+directories, validate the complete file set, and publish without replacing an
+existing destination. The linked v0.1.0 wheel predates this lifecycle behavior;
+use a source build for these commands until a new wheel is released.
+
+Setup prepares both roots and publishes private first, public last. The public
+publication is the commit point. This gives process-failure recovery on supported
+local macOS/Linux filesystems, not an atomic transaction across two filesystems
+or a power-loss durability guarantee. Parent directories must remain stable.
+
+Before native work starts, the CLI prints the exact private recovery journal on
+stderr. Library callers can receive it with the optional `on_prepared` callback.
+After an interrupted process exits, recover that single attempt explicitly:
+
+```sh
+ciphershape recover --journal /absolute/path/to/stage.json
+```
+
+Recovery refuses an active or changed journal, discards an identified unpublished
+attempt, and preserves a known published result. If the public output was moved
+or replaced and publication cannot be determined, it preserves private output
+and the journal for inspection. It never scans for abandoned jobs or deletes by
+age or PID. A kill during initial preparation, before a complete journal exists,
+can leave a private preparatory directory; automatic recovery does not guess its
+ownership. Do not remove changed or unfamiliar paths as a retry shortcut.
+
+Exit `0` means success, `2` means refusal or failure, and `3` means the final
+artifacts were published but cleanup needs the named journal. An interruption
+returns `130`. Failure receipts contain operation/stage/status and a recovery
+path, not key bytes, inputs, decrypted answers or native diagnostics. A failed
+demo can retain earlier complete artifact sets; it does not publish a successful
+client report. Each new demo still needs a new output directory.
+
+The HTTP route captures and checks outgoing ciphertext bytes before encoding
+them. It validates incoming members, digests, request/context binding and typed
+server telemetry before publication. Server fields cannot supply the client's
+acceptance decision. Python callers should pass `public=public_directory` to
+`evaluate_http` to validate the expected output count before publication. Legacy
+calls without that argument still check reply/request binding and byte integrity;
+their expected output count is checked by `decrypt`. Hashes and telemetry are
+consistency evidence, not sender authentication or a proof of performance.
 
 ## Declare a workload
 

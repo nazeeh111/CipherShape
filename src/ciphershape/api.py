@@ -13,6 +13,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 import math
 import multiprocessing
+import os
 from pathlib import Path
 import secrets
 import signal
@@ -21,7 +22,9 @@ import time
 from urllib.parse import urlsplit
 from urllib.request import Request, build_opener, HTTPRedirectHandler
 
-from .runtime import ProtocolError, evaluate_server, read_json, write_json
+from .runtime import (ProtocolError, evaluate_server, read_json, write_json, parse_json,
+                      validate_envelope, server_metadata, _ciphertexts, _public_manifest)
+from .artifacts import MAX_ARTIFACT, read_bytes, staged_artifacts, new_destination, separate_paths
 
 
 def signature(key: bytes, timestamp: str, nonce: str, body: bytes) -> str:
@@ -29,35 +32,73 @@ def signature(key: bytes, timestamp: str, nonce: str, body: bytes) -> str:
     return hmac.new(key, message, hashlib.sha256).hexdigest()
 
 
-def pack(directory: Path, metadata: dict | None = None) -> bytes:
-    envelope = read_json(directory / "envelope.json")
-    files = {name: base64.b64encode((directory / name).read_bytes()).decode("ascii") for name in envelope["ciphertexts"]}
-    return json.dumps({"envelope": envelope, "files": files, "server_metadata": metadata or {}}, separators=(",", ":"), allow_nan=False).encode()
-
-
-def unpack(body: bytes, directory: Path, limit: int):
+def pack(directory: Path, metadata: dict | None = None, *, limit: int = MAX_ARTIFACT) -> bytes:
+    metadata = server_metadata(metadata if metadata is not None else {})
+    fd = os.open(directory, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW)
     try:
-        data = json.loads(body)
+        raw = read_bytes(Path("envelope.json"), min(limit, 1_000_000), dir_fd=fd)
+        envelope = validate_envelope(parse_json(raw))
+        expected = set(envelope["ciphertexts"]) | {"envelope.json"}
+        names = set()
+        with os.scandir(fd) as entries:
+            for entry in entries:
+                names.add(entry.name)
+                if len(names) > 257 or entry.name not in expected:
+                    raise ProtocolError("artifact set mismatch")
+        if names != expected:
+            raise ProtocolError("artifact set mismatch")
+        files, total = {}, len(raw)
+        for name, fingerprint in envelope["ciphertexts"].items():
+            blob = read_bytes(Path(name), min(MAX_ARTIFACT, limit - total), dir_fd=fd)
+            if not blob or hashlib.sha256(blob).hexdigest() != fingerprint:
+                raise ProtocolError("ciphertext integrity mismatch")
+            total += len(blob)
+            files[name] = base64.b64encode(blob).decode("ascii")
+    finally:
+        os.close(fd)
+    return json.dumps({"envelope": envelope, "files": files, "server_metadata": metadata},
+                      separators=(",", ":"), allow_nan=False).encode()
+
+
+def unpack(body: bytes, directory: Path, limit: int, *, expected: dict | None = None,
+           count: int | None = None, request_id: str | None = None,
+           operation: str = "request", on_prepared=None) -> dict:
+    new_destination(directory)
+    try:
+        if len(body) > limit * 4 // 3 + 1_000_000:
+            raise ValueError
+        data = parse_json(body)
+        if set(data) - {"envelope", "files", "server_metadata"}:
+            raise ValueError
         envelope, files = data["envelope"], data["files"]
-        if not isinstance(envelope, dict) or not isinstance(files, dict) or len(files) > 256:
+        envelope = validate_envelope(envelope, count, expected, request_id)
+        if not isinstance(files, dict) or set(files) != set(envelope["ciphertexts"]):
             raise ValueError
-        expected = {f"{i}.bin" for i in range(len(files))}
-        if set(files) != expected or set(envelope["ciphertexts"]) != expected:
+        metadata = server_metadata(data.get("server_metadata", {}))
+        if operation not in {"request", "response"} or (operation == "request" and metadata):
             raise ValueError
-        total = 0
+        encoded = (json.dumps(envelope, indent=2, sort_keys=True, allow_nan=False) + "\n").encode()
+        total = len(encoded)
         decoded = {}
         for name, value in files.items():
+            if not isinstance(value, str):
+                raise ValueError
             blob = base64.b64decode(value, validate=True)
             total += len(blob)
-            if total > limit or not blob:
+            if (total > limit or not blob or
+                    hashlib.sha256(blob).hexdigest() != envelope["ciphertexts"][name]):
                 raise ValueError
             decoded[name] = blob
-        directory.mkdir()
-        for name, blob in decoded.items():
-            (directory / name).write_bytes(blob)
-        write_json(directory / "envelope.json", envelope)
     except (ValueError, TypeError, KeyError) as exc:
         raise ProtocolError("invalid API request") from exc
+    with staged_artifacts(operation, **{operation: directory},
+                          byte_limits={operation: limit}, on_prepared=on_prepared) as stage:
+        payload = stage[operation]
+        for name, blob in decoded.items():
+            (payload / name).write_bytes(blob)
+        (payload / "envelope.json").write_bytes(encoded)
+        _ciphertexts(payload, {**envelope, "max_payload_bytes": limit}, len(decoded), request_id)
+    return metadata
 
 
 def _serve(public: str, key: bytes, ready):
@@ -119,9 +160,9 @@ def _serve(public: str, key: bytes, ready):
                 with tempfile.TemporaryDirectory(prefix="ciphershape-api-") as temp:
                     temp = Path(temp)
                     request, response = temp / "request", temp / "response"
-                    unpack(body, request, limit)
+                    unpack(body, request, limit, expected=manifest, count=manifest.get("input_count"))
                     metadata = evaluate_server(public_path, request, response)
-                    self.reply(200, pack(response, metadata))
+                    self.reply(200, pack(response, metadata, limit=limit))
             except (OSError, ValueError, TypeError, KeyError):
                 self.reply(400, b'{"error":"request rejected"}')
 
@@ -165,13 +206,25 @@ def local_endpoint(public: Path):
             process.join()
 
 
-def evaluate_http(url: str, key: bytes, request: Path, response: Path, limit: int = 64*1024**2) -> dict:
+def evaluate_http(url: str, key: bytes, request: Path, response: Path, limit: int = 64*1024**2,
+                  *, public: Path | None = None, on_prepared=None) -> dict:
+    """Bind the reply before publication; public configuration also checks output arity.
+
+    Legacy callers without public configuration still bind the request/context and
+    payload integrity. Their expected output count is established by decrypt().
+    """
     parsed = urlsplit(url)
     if (parsed.scheme != "http" or parsed.hostname != "127.0.0.1" or parsed.port is None or
             parsed.username is not None or parsed.password is not None or
             parsed.path != "/v1/evaluate" or parsed.query or parsed.fragment):
         raise ProtocolError("only the local encrypted demonstration endpoint is supported")
-    body = pack(request)
+    separate_paths(request, response, *([public] if public is not None else []))
+    new_destination(response)
+    body = pack(request, limit=limit)
+    original = parse_json(body)["envelope"]
+    manifest = _public_manifest(public) if public is not None else None
+    if manifest is not None:
+        validate_envelope(original, manifest["input_count"], manifest)
     timestamp, nonce = str(time.time()), secrets.token_hex(16)
     headers = {"Content-Type": "application/json", "X-CS-Time": timestamp, "X-CS-Nonce": nonce,
                "X-CS-Signature": signature(key, timestamp, nonce, body)}
@@ -183,6 +236,8 @@ def evaluate_http(url: str, key: bytes, request: Path, response: Path, limit: in
         data = answer.read(limit*4//3 + 1_000_001)
         if len(data) > limit*4//3 + 1_000_000:
             raise ProtocolError("API response too large")
-    unpack(data, response, limit)
-    return {**json.loads(data).get("server_metadata", {}), "http_roundtrip_seconds": time.perf_counter() - start,
+    metadata = unpack(data, response, limit, expected=original,
+                      count=len(manifest["outputs"]) if manifest is not None else None,
+                      request_id=original["request_id"], operation="response", on_prepared=on_prepared)
+    return {**metadata, "http_roundtrip_seconds": time.perf_counter() - start,
             "http_request_body_bytes": len(body), "http_response_body_bytes": len(data)}
