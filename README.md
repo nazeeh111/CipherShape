@@ -120,6 +120,50 @@ included HTTP demonstration binds to `127.0.0.1`, uses an ephemeral owner-scoped
 authentication key and returns ciphertexts plus public execution metadata.
 It is not a remote deployment service.
 
+## Publish and recover artifacts
+
+Source builds stage each setup, request and response in private sibling
+directories, validate the complete file set, and publish without replacing an
+existing destination. The linked v0.1.0 wheel predates this lifecycle behavior;
+use a source build for these commands until a new wheel is released.
+
+Setup prepares both roots and publishes private first, public last. The public
+publication is the commit point. This gives process-failure recovery on supported
+local macOS/Linux filesystems, not an atomic transaction across two filesystems
+or a power-loss durability guarantee. Parent directories must remain stable.
+
+Before native work starts, the CLI prints the exact private recovery journal on
+stderr. Library callers can receive it with the optional `on_prepared` callback.
+After an interrupted process exits, recover that single attempt explicitly:
+
+```sh
+ciphershape recover --journal /absolute/path/to/stage.json
+```
+
+Recovery refuses an active or changed journal, discards an identified unpublished
+attempt, and preserves a known published result. If the public output was moved
+or replaced and publication cannot be determined, it preserves private output
+and the journal for inspection. It never scans for abandoned jobs or deletes by
+age or PID. A kill during initial preparation, before a complete journal exists,
+can leave a private preparatory directory; automatic recovery does not guess its
+ownership. Do not remove changed or unfamiliar paths as a retry shortcut.
+
+Exit `0` means success, `2` means refusal or failure, and `3` means the final
+artifacts were published but cleanup needs the named journal. An interruption
+returns `130`. Failure receipts contain operation/stage/status and a recovery
+path, not key bytes, inputs, decrypted answers or native diagnostics. A failed
+demo can retain earlier complete artifact sets; it does not publish a successful
+client report. Each new demo still needs a new output directory.
+
+The HTTP route captures and checks outgoing ciphertext bytes before encoding
+them. It validates incoming members, digests, request/context binding and typed
+server telemetry before publication. Server fields cannot supply the client's
+acceptance decision. Python callers should pass `public=public_directory` to
+`evaluate_http` to validate the expected output count before publication. Legacy
+calls without that argument still check reply/request binding and byte integrity;
+their expected output count is checked by `decrypt`. Hashes and telemetry are
+consistency evidence, not sender authentication or a proof of performance.
+
 ## Declare a workload
 
 ```python
