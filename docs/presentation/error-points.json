@@ -1,0 +1,39 @@
+{
+  "names": [
+    "mean_x",
+    "mean_y",
+    "variance_x",
+    "variance_y",
+    "covariance",
+    "score_x",
+    "score_y"
+  ],
+  "errors": [
+    [
+      1.900962415257723e-09,
+      1.7344353314685534e-09,
+      5.156586824206499e-10,
+      8.051312394563581e-10,
+      2.596424047984769e-10,
+      9.368944509091648e-11,
+      9.299783165772624e-11
+    ],
+    [
+      1.238095986844101e-09,
+      1.788331080443406e-09,
+      6.030942967250041e-10,
+      2.4332330594845075e-10,
+      3.7337741926046775e-10,
+      2.730632109315678e-10,
+      1.6411590836318268e-10
+    ]
+  ],
+  "definition": "abs(decrypted-compiled_plaintext), not empirical confidence limits",
+  "tolerance": 0.0001,
+  "log10_limits": [
+    1e-12,
+    0.001
+  ],
+  "all14points": true,
+  "source_report_sha256": "cbf392ab2282df9ccb4c3f3787f9f391d6795be56288807d9caf0fc95f1e89e2"
+}

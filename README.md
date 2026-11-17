@@ -1,31 +1,34 @@
 # CipherShape
 
-**Compile small numerical endpoints that run on encrypted client inputs.**
+**Compile bounded numerical endpoints that evaluate encrypted client inputs.**
 
-[Watch the 31-second recorded execution replay](assets/demo/ciphershape-demo.mp4)
-or inspect the [raw terminal recording](assets/demo/demo.cast).
+The client holds the secret key. A separate native server evaluates an OpenFHE CKKS plan and returns encrypted scalar answers, with no plaintext fallback. CipherShape supplies the typed graph, planner, client checks, transport and artifact lifecycle around that execution.
 
-![Actual encrypted analytics run: client outputs and public server metadata](assets/demo/preview.png)
+<picture>
+  <source media="(max-width: 600px)" srcset="docs/presentation/boundary-mobile.png">
+  <img src="docs/presentation/boundary.png" alt="Client keeps its secret key and plaintext, sends two ciphertext inputs and public evaluation material, and receives seven ciphertext outputs to decrypt and check locally.">
+</picture>
 
-The replay presents the retained analytics and model execution reports. Its verdicts and accepted counts come from those reports; edited holds are not a latency measurement.
+[Run with the current source and verified Mac workers](#use-the-current-source-with-prebuilt-mac-workers) · [Inspect and reopen the synthetic evidence](docs/presentation/README.md) · [Download the portable reader](docs/presentation/cipherShape-analytics-reader.zip) · [Security contract](docs/security.md)
 
-The client generates keys, checks input ranges and encrypts. A separate server
-process evaluates an OpenFHE CKKS plan using ciphertexts and public evaluation
-keys. The client decrypts the permitted scalar outputs. There is no plaintext
-fallback.
+## Same values, different relationship
 
-Two applications use the same typed graph language:
+The worked analytics endpoint computes means, population variances, covariance and public weighted scores for two eight-element vectors. Reversing **x** leaves its reference mean **0.15** and variance **0.3** unchanged, while covariance with unchanged **y** moves from **−0.05125** to **0.06125**. The public weighted score of x changes from **0.2390625** to **−0.0703125**.
 
-- **Analytics:** means, population variances, covariance and public linear scores
-  for two eight-element vectors.
-- **Public model inference:** a four-feature linear model trained on original
-  synthetic examples. Model weights are public; feature values are private.
+Two fresh requests crossed the authenticated loopback HTTP boundary and ran in separate native evaluator processes. Both client checks accepted. The largest encrypted-versus-compiled errors were **1.901e−9** and **1.788e−9**; the declared tolerance is **1e−4**, also accounting for reference approximation and checking non-result slots. All fourteen observed output errors appear below. These are two synthetic observations, not an accuracy guarantee or performance study.
 
-CKKS is approximate homomorphic encryption: it permits arithmetic on encrypted
-numbers, with numerical error. This is a bounded, leveled computation, with no
-bootstrapping or arbitrary-depth execution. The security target is an
-honest-but-curious server following the protocol. Read the
-[security contract](docs/security.md) before using private data.
+<picture>
+  <source media="(max-width: 600px)" srcset="docs/presentation/errors-mobile.png">
+  <img src="docs/presentation/errors.png" alt="All seven outputs for both requests share an absolute-error logarithmic scale. The fourteen observed errors are below the separately marked declared tolerance of 0.0001.">
+</picture>
+
+The [input vectors](docs/presentation/synthetic-inputs.json), [client report](docs/presentation/analytics-report.json), [boundary observations](docs/presentation/boundary.json) and [refusal controls](docs/presentation/controls.json) are intentionally public synthetic examples. Real inputs, secret keys and decrypted reports belong on the client and should stay private. Re-encrypting the same input produced different ciphertext bytes, as expected from randomized encryption; fresh runs should satisfy the numerical checks rather than reproduce ciphertext hashes.
+
+## What this supports
+
+CKKS provides approximate homomorphic arithmetic for bounded, leveled computations. There is no bootstrapping or arbitrary-depth execution. The server is assumed honest-but-curious and follows the protocol; client numerical checks do not prove correct execution against a malicious server. Public code, weights, shapes, sizes, timing and request linkage remain visible. These local processes are not an operating-system isolation boundary against a malicious host.
+
+The same graph language also supports the retained four-feature **public model inference** example, with public weights trained on original synthetic examples and private feature inputs. It was not retrained or rerun for this analytics walkthrough. The [31-second recorded execution replay](assets/demo/ciphershape-demo.mp4), [raw terminal recording](assets/demo/demo.cast) and [earlier preview](assets/demo/preview.png) remain available. Their edited holds are not latency measurements.
 
 ## Use the current source with prebuilt Mac workers
 

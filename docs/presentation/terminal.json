@@ -1,0 +1,6 @@
+{
+  "command": "python -B -m ciphershape.cli demo analytics --out <RUN>",
+  "exit": 0,
+  "stdout": "{\n  \"accepted\": true,\n  \"client_report\": \"<RUN>/client/report.json\",\n  \"program_id\": \"a9ed2af44f1277ea848c1918d4dd817d23274a5ac074f945fa66373484ac62d5\",\n  \"calibrated\": false\n}\n",
+  "redaction": "Only the owned temporary run path is replaced; stderr recovery-journal paths are retained privately, not part of this reader."
+}

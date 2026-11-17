@@ -1,0 +1,2 @@
+# Hash-addressed reader records and figures must retain their exact bytes.
+docs/presentation/** -text -eol

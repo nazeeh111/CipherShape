@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CipherShape protocol boundary</title><style>body{margin:0}svg{display:block;min-width:480px}.diagram-container{overflow-x:auto}</style><div class="diagram-container"><svg xmlns="http://www.w3.org/2000/svg" width="480" height="1100" viewBox="0 0 480 1100" role="img" aria-labelledby="boundary-mobile-title boundary-mobile-desc" font-family="Arial"><title id="boundary-mobile-title">CipherShape client and server protocol inputs</title><desc id="boundary-mobile-desc">A client keeps its secret key and plaintext, sends two ciphertext inputs with public evaluation material to a separate native evaluator, receives seven encrypted outputs, and decrypts and checks them locally.</desc><defs><marker id="boundary-mobile-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#164c82"/></marker></defs><rect width="100%" height="100%" fill="#f4f6fa"/>
+<text x="32" y="38" fill="#164c82" font-size="13" font-weight="400">CipherShape / One actual synthetic analytics run</text>
+<text x="32" y="90" fill="#142236" font-size="29" font-weight="700">Reorder the input.</text>
+<text x="32" y="130" fill="#142236" font-size="29" font-weight="700">Keep it encrypted.</text>
+<text x="32" y="174" fill="#526478" font-size="16" font-weight="400">Two vectors. Seven scalar outputs. Bounded CKKS.</text>
+<rect x="32" y="215" width="416" height="225" fill="white" stroke="#a9b8c9"/>
+<text x="52" y="252" fill="#176844" font-size="25" font-weight="700">Client</text>
+<text x="52" y="292" fill="#142236" font-size="17" font-weight="400">Secret key and plaintext stay here.</text>
+<text x="52" y="328" fill="#176844" font-size="22" font-weight="700">Encrypt → decrypt → check</text>
+<text x="52" y="370" fill="#526478" font-size="16" font-weight="400">Only synthetic fixture values are public</text>
+<text x="52" y="397" fill="#526478" font-size="16" font-weight="400">in this worked example.</text>
+<line x1="176" y1="440" x2="176" y2="550" stroke="#164c82" stroke-width="2" marker-end="url(#boundary-mobile-arrow)"/><line x1="304" y1="550" x2="304" y2="440" stroke="#164c82" stroke-width="2" marker-end="url(#boundary-mobile-arrow)"/>
+<text x="36" y="475" fill="#164c82" font-size="15" font-weight="400">2 encrypted</text>
+<text x="36" y="498" fill="#164c82" font-size="15" font-weight="400">inputs</text>
+<text x="320" y="475" fill="#164c82" font-size="15" font-weight="400">7 encrypted</text>
+<text x="320" y="498" fill="#164c82" font-size="15" font-weight="400">outputs</text>
+<rect x="32" y="550" width="416" height="220" fill="white" stroke="#a9b8c9"/>
+<text x="52" y="590" fill="#164c82" font-size="25" font-weight="700">Server protocol</text>
+<text x="52" y="630" fill="#142236" font-size="18" font-weight="400">Public plan and evaluation keys</text>
+<text x="52" y="668" fill="#142236" font-size="17" font-weight="400">Separate native evaluator process</text>
+<text x="52" y="708" fill="#142236" font-size="17" font-weight="400">Not given secret key or plaintext</text>
+<text x="52" y="739" fill="#526478" font-size="14" font-weight="400">Honest-but-curious, not malicious-proof</text>
+<text x="32" y="830" fill="#142236" font-size="17" font-weight="700">The reordered input changes the relationship.</text>
+<text x="32" y="870" fill="#142236" font-size="21" font-weight="400">Mean x: 0.15 → 0.15</text>
+<text x="32" y="910" fill="#142236" font-size="21" font-weight="400">Covariance: −0.05125 → 0.06125</text>
+<text x="32" y="950" fill="#526478" font-size="14" font-weight="400">Client float references for the two fixtures.</text>
+<text x="32" y="1035" fill="#526478" font-size="14" font-weight="400">Local HTTP demonstration, not a remote service.</text>
+<text x="32" y="1070" fill="#526478" font-size="14" font-weight="400">Counts, shapes, code and timing remain public.</text>
+</svg>
+</div></html>
