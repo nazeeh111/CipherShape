@@ -1,0 +1,88 @@
+{
+  "source_revision": "0fd63ab89535661e40cb798201fa206c3e0b7265",
+  "composition": "Source-derived client/server boundary and all14 observed CKKS errors, common log10 limits",
+  "png_method": "Actual Chrome screenshot of each inline SVG at its native canvas dimensions",
+  "font": "Arial verified on every actual Chrome text/tspan node",
+  "files": [
+    {
+      "path": "render.py",
+      "bytes": 9290,
+      "sha256": "623985a2f497c67c8624930ef8bafc79c5f2c4f82e79d67a296556eb1dac56dd"
+    },
+    {
+      "path": "analytics-report.json",
+      "bytes": 39929,
+      "sha256": "cbf392ab2282df9ccb4c3f3787f9f391d6795be56288807d9caf0fc95f1e89e2"
+    },
+    {
+      "path": "synthetic-inputs.json",
+      "bytes": 676,
+      "sha256": "affd0f46a432a7ff5f069e6a3d03801b946fb942ab9c027188eb80baf7ac9d6d"
+    },
+    {
+      "path": "error-points.json",
+      "bytes": 856,
+      "sha256": "98774e4aa5a2e24060ee4ff68b3c86f53e58c5fbee8535936cd040be82da9ad3"
+    },
+    {
+      "path": "boundary.svg",
+      "bytes": 3287,
+      "sha256": "802be0d333b5727637363367d6d0c4c181f37a067bb66837b58f9c0ad92f36a1"
+    },
+    {
+      "path": "boundary.png",
+      "bytes": 107802,
+      "sha256": "a87d1fd99c09580c820fe7b76c1df83f118b22cca120c11ffaae7c092144f9c0"
+    },
+    {
+      "path": "boundary.html",
+      "bytes": 3594,
+      "sha256": "61037e589141e11767224de50bbd6b8df34a88c18a265caed19b5869c124583f"
+    },
+    {
+      "path": "boundary-mobile.svg",
+      "bytes": 3702,
+      "sha256": "53d9771026e684d2dda5b0652877214f31a0531e0c4f01ffec1a1fc3cbd76db8"
+    },
+    {
+      "path": "boundary-mobile.png",
+      "bytes": 86757,
+      "sha256": "7e4c99ad701161f5a046223b1c7692d4a351d8b45d5051295d9d27800d4e3658"
+    },
+    {
+      "path": "boundary-mobile.html",
+      "bytes": 4008,
+      "sha256": "f2d890225ceb2914b2b4ac279055988cf630354a02e0db6ba193062680676f56"
+    },
+    {
+      "path": "errors.svg",
+      "bytes": 12875,
+      "sha256": "10b90a6a020f65e4a3748d9b81579958486970f8f90091b2ba18c97a8f102524"
+    },
+    {
+      "path": "errors.png",
+      "bytes": 81107,
+      "sha256": "5361eaf76f570ef1dc0db81f71d14be0dc7b7288f19a885afb087005de94d625"
+    },
+    {
+      "path": "errors.html",
+      "bytes": 13180,
+      "sha256": "fbf5f2207752a45b6ac2854012a0ba44653c6ecea18f3f0a5daea85797da6367"
+    },
+    {
+      "path": "errors-mobile.svg",
+      "bytes": 12952,
+      "sha256": "f62f44e3493ea72a4cc3713acc2c3545a84b9b5919319709321dd7e8e39a729f"
+    },
+    {
+      "path": "errors-mobile.png",
+      "bytes": 51552,
+      "sha256": "a1e2603e957e1846d482e8d58a0e644522b0765f3d92e415ac50f7bc6e7ecd97"
+    },
+    {
+      "path": "errors-mobile.html",
+      "bytes": 13256,
+      "sha256": "525a5594a7d6084219e9df567cc467e253126cface6d4f6334636be32418f453"
+    }
+  ]
+}

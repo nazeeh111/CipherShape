@@ -1,0 +1,22 @@
+{
+  "source_revision": "0fd63ab89535661e40cb798201fa206c3e0b7265",
+  "client_range_refused_before_publication": true,
+  "response_request_binding_refused": true,
+  "existing_client_report_preserved": true,
+  "all_refusal_exits": 2,
+  "same_input_fresh_encryption": [
+    {
+      "ciphertext_member": "0.bin",
+      "first_sha256": "62e4c6b51fffd3a009923fb7b5bbab6e70d320b1d5ce2f348e2bd1ff7e2a4a91",
+      "fresh_sha256": "dbc0d1757776edf0ac5182ac79c5820cda6270bcafde0874e4f9a1f506d77505",
+      "different": true
+    },
+    {
+      "ciphertext_member": "1.bin",
+      "first_sha256": "49a878993ab746611686276dd98311dcae168f212b3aa5e27648febc5249e218",
+      "fresh_sha256": "b89ddef3c0deab5c9996382777c797f40e60a3923e94649dd2e1bc7383be78f0",
+      "different": true
+    }
+  ],
+  "interpretation": "Randomized ciphertext identities differ legitimately even with the same synthetic plaintext, context and key. Numerical acceptance, declared source and profile govern fresh reruns, not bitwise ciphertext equality. No extra server evaluation or model fitting."
+}

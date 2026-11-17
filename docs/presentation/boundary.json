@@ -1,0 +1,223 @@
+{
+  "source_revision": "0fd63ab89535661e40cb798201fa206c3e0b7265",
+  "server_protocol_receives": [
+    "public context",
+    "public/encryption and evaluation keys",
+    "public plan",
+    "ciphertext request"
+  ],
+  "client_only": [
+    "secret key",
+    "real plaintext input",
+    "decrypted answers",
+    "client acceptance decision"
+  ],
+  "synthetic_disclosure": "This demonstration deliberately publishes only synthetic input/output numbers and public protocol file identities. Generated secret keys and ciphertext binaries are not included.",
+  "external_artifact_observations_not_bundle_members": {
+    "server": [
+      {
+        "name": "context.bin",
+        "bytes": 733,
+        "sha256": "e489f525796be93b9a1ccf241747cea68a7b843a5ad27bf8bc2778224d6a3002"
+      },
+      {
+        "name": "manifest.json",
+        "bytes": 889,
+        "sha256": "9cbbcc29df36c8a7326305d2a38d1a15d9f4d9ac73035a3ffc3df4e68445ee6d"
+      },
+      {
+        "name": "mult.bin",
+        "bytes": 5507937,
+        "sha256": "f09871705ae9e9b07707f3d691c6d48290d18de31aac9a33b62be0aebd166f7a"
+      },
+      {
+        "name": "plan.json",
+        "bytes": 3565,
+        "sha256": "1361560892fde98a9cac079418015ad04e8c6e5559f1ae5779aade9c60e79811"
+      },
+      {
+        "name": "plan.txt",
+        "bytes": 1631,
+        "sha256": "d823b92b862510e3afcbd21c4531489c92a9c89f1a5e5e1fc90673d072d4df1a"
+      },
+      {
+        "name": "public.bin",
+        "bytes": 1311903,
+        "sha256": "5003ee7e7c3b4dbd9cb7e216a654046a68abd9acbae2f1fbbd487229c004ce19"
+      },
+      {
+        "name": "rot.bin",
+        "bytes": 16521157,
+        "sha256": "7b65403cfbb09215c356daa58a11133c5153dc42bf28e734f36be29c5e216183"
+      },
+      {
+        "name": "workload.json",
+        "bytes": 6273,
+        "sha256": "e6a3ae3ed1d60f9ca06a5d84e0c49dd6bd168906d22d6df7b6acee8ee1fb8bdb"
+      }
+    ],
+    "request-0": [
+      {
+        "name": "0.bin",
+        "bytes": 1312307,
+        "sha256": "62e4c6b51fffd3a009923fb7b5bbab6e70d320b1d5ce2f348e2bd1ff7e2a4a91"
+      },
+      {
+        "name": "1.bin",
+        "bytes": 1312307,
+        "sha256": "49a878993ab746611686276dd98311dcae168f212b3aa5e27648febc5249e218"
+      },
+      {
+        "name": "envelope.json",
+        "bytes": 479,
+        "sha256": "06c1508518c32708f495bb38b2c947d56661a05b67b4e2be8ad554d71b229e48"
+      }
+    ],
+    "request-1": [
+      {
+        "name": "0.bin",
+        "bytes": 1312307,
+        "sha256": "4260969596d7ffabb59b0a6768b92ac5e83ab4f3efe6a40e225c5f9e3cc1e644"
+      },
+      {
+        "name": "1.bin",
+        "bytes": 1312307,
+        "sha256": "6ff634c263efc917fc1f900e27f4ff1499c55650738f808a7ef290082b0e4c92"
+      },
+      {
+        "name": "envelope.json",
+        "bytes": 479,
+        "sha256": "29c20918f115b3027cb1c47cb36794e7311a5ab9177c63719133c69e4c6dbb08"
+      }
+    ],
+    "response-0": [
+      {
+        "name": "0.bin",
+        "bytes": 1050185,
+        "sha256": "95bd8bcc9ce1773c2bea71eefffc02496278179b1b9eba5cde41f12757fed6c4"
+      },
+      {
+        "name": "1.bin",
+        "bytes": 1050185,
+        "sha256": "07cc9d1ac9d8c17437e199b5fb141c965f74a6c3644b09ea9d81fb5f3be69940"
+      },
+      {
+        "name": "2.bin",
+        "bytes": 787919,
+        "sha256": "9472a9a1a6118bd5a8405c164d4b3ae9381cd69b473b2b27773c1fbfef3c032e"
+      },
+      {
+        "name": "3.bin",
+        "bytes": 787919,
+        "sha256": "7506c405c8f917dd3f22dc4c95a3091d6c16ec68ed4be91dbdb423bb15410d38"
+      },
+      {
+        "name": "4.bin",
+        "bytes": 787919,
+        "sha256": "68a14295d17274fe294cd5c55dc9c8fd5e15812e68c3de81d0a44cc7820c476c"
+      },
+      {
+        "name": "5.bin",
+        "bytes": 1050185,
+        "sha256": "63ce41d89e2956e8b6aa1ceb4ea3785d7ebf0699b90078b88964464dfa666a5a"
+      },
+      {
+        "name": "6.bin",
+        "bytes": 1050185,
+        "sha256": "0988c0d55ed1cf75fdfb1f7efc9d8daed94d4bb7361078882c4287721f00afd5"
+      },
+      {
+        "name": "envelope.json",
+        "bytes": 884,
+        "sha256": "268d40b83801f77839492e20de7333924f0ca497128acc950297c7895270bafe"
+      }
+    ],
+    "response-1": [
+      {
+        "name": "0.bin",
+        "bytes": 1050185,
+        "sha256": "b1cf920ca815f8901be6b7585eb9f6f14d79a7e4d1894ce10d57ebd17927cdf0"
+      },
+      {
+        "name": "1.bin",
+        "bytes": 1050185,
+        "sha256": "60e70fbfdcf43019ebfe97a38c426ec7a56c514732c9fb37fdfc58d26ee52ab5"
+      },
+      {
+        "name": "2.bin",
+        "bytes": 787919,
+        "sha256": "ac3f1b584dfc60b30ebbddc4f167a6078f4c436d007b0ccbdb70b22beb4ac6cd"
+      },
+      {
+        "name": "3.bin",
+        "bytes": 787919,
+        "sha256": "f66f40335d7ce19e36e3488a50a515c6ab68b8a5540c46409bb14686f57c3e41"
+      },
+      {
+        "name": "4.bin",
+        "bytes": 787919,
+        "sha256": "37b16c9ba640f3b63a7350e974b45a5839a998bc1ad7e22cc4e0e93b2a11dd23"
+      },
+      {
+        "name": "5.bin",
+        "bytes": 1050185,
+        "sha256": "a4bb65e4201fe4eb78448feca484412eaf2aa05a492b8a802e6784706a8a0fe5"
+      },
+      {
+        "name": "6.bin",
+        "bytes": 1050185,
+        "sha256": "aa03e94586c85a2f49dc1ae49ca912f8c6e34a0dafaa85a84ab512141a879f9c"
+      },
+      {
+        "name": "envelope.json",
+        "bytes": 884,
+        "sha256": "5788dede411e1c8dc4193e34b66b2220c4c622837e8e6f5ff3a458f7f07f71f0"
+      }
+    ]
+  },
+  "profile": {
+    "depth": 4,
+    "first_mod_bits": 55,
+    "key_tag": "04094bbf46e82b4c155fa5eada8ed2f3",
+    "peak_rss_bytes": 38715392,
+    "ring_dimension": 16384,
+    "scale_bits": 45,
+    "security": "HEStd_128_classic",
+    "slots": 8192
+  },
+  "public_plan": {
+    "basis": [
+      1,
+      2,
+      4
+    ],
+    "layout": "packed",
+    "retention": "last-use",
+    "sharing": "shared",
+    "stats": {
+      "ciphertext_inputs": 2,
+      "counts": {
+        "add": 21,
+        "input": 2,
+        "mask": 7,
+        "mul": 6,
+        "output": 7,
+        "rotate": 21,
+        "scale": 5,
+        "sub": 3,
+        "weights": 2
+      },
+      "depth": 4,
+      "layout_conversions": 0,
+      "output_masks": 7,
+      "peak_live_ciphertexts": 7,
+      "relinearizations": 6,
+      "rescale_policy": "OpenFHE FLEXIBLEAUTO; actual levels in native trace",
+      "rotation_keys": 3,
+      "scale_bits": 45,
+      "security": "HEStd_128_classic",
+      "slots": "ring_dimension/2"
+    }
+  },
+  "scope": "Honest-but-curious protocol boundary, not OS sandboxing or malicious-server correctness; same laptop processes have no hostile-host protection."
+}
