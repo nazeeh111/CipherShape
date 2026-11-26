@@ -9,7 +9,7 @@ The client holds the secret key. A separate native server evaluates an OpenFHE C
   <img src="docs/presentation/boundary.png" alt="Client keeps its secret key and plaintext, sends two ciphertext inputs and public evaluation material, and receives seven ciphertext outputs to decrypt and check locally.">
 </picture>
 
-[Run with the current source and verified Mac workers](#use-the-current-source-with-prebuilt-mac-workers) · [Inspect and reopen the synthetic evidence](docs/presentation/README.md) · [Download the portable reader](docs/presentation/cipherShape-analytics-reader.zip) · [Security contract](docs/security.md)
+[Run with the current source and verified Mac workers](#use-the-current-source-with-prebuilt-mac-workers) · [Inspect and reopen the synthetic evidence](docs/presentation/README.md) · [Download the portable reader](https://raw.githubusercontent.com/nazeeh111/CipherShape/3eb4da83fb7e017123db77cdc6b9569d94684a7b/docs/presentation/cipherShape-analytics-reader.zip) · [Security contract](docs/security.md)
 
 ## Same values, different relationship
 
